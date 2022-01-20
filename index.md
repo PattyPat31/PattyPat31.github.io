@@ -1,12 +1,10 @@
 ## Welcome to Physique du vivant
 
-You can use the [editor on GitHub](https://github.com/PattyPat31/PattyPat31.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+Présentation des projets 2021-2022
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Projets proposés
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Voici la liste des projets proposés:
 
 ```markdown
 Syntax highlighted code block
