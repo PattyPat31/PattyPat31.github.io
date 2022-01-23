@@ -12,8 +12,8 @@ avec la prise en main de différents codes de simulation numérique:
 - modélisation 0D dans un ou plusieurs vaisseaux
 - modélisation 1D dans un ou plusieurs vaisseaux
 
-Ces codes (disponibles sur https://github.com/PattyPat31/Mecanique-du-vivant) vous permettrons 
-ainsi d'étudier différentes configurations.
+La maîtrise de ces codes (disponibles en [dépôt GitHub](https://github.com/PattyPat31/Mecanique-du-vivant))
+vous permettrons par la suite d'étudier différentes configurations.
 
 Avec les projets, vous pourrez enfin mettre vous même tout ça en musique sur
 des exemples concrêts (circulation cérébrale, écoulement en présence d'une sténose, 
