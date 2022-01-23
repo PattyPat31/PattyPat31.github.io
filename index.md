@@ -11,6 +11,7 @@ Les séances de TD seront dédiées à la mise en oeuvre de ces différents mod�
 avec la prise en main de différents codes de simulation numérique:
 - modélisation 0D dans un ou plusieurs vaisseaux
 - modélisation 1D dans un ou plusieurs vaisseaux
+
 Ces codes vous permettrons ainsi d'étudier différentes configurations.
 
 Avec les projets, vous pourrez enfin mettre vous même tout ça en musique sur
