@@ -11,12 +11,15 @@ Les séances de TD seront dédiées à la mise en oeuvre de ces différents mod�
 avec la prise en main de différents codes de simulation numérique.
 
 Avec les projets, vous pourrez enfin mettre vous même tout ça en musique sur
-des exemples concrêts (circulation cérébrale, effet d'une sténose, effets instationnaires, etc...),
-issus par exemple d'articles scientifiques.
+des exemples concrêts (circulation cérébrale, écoulement en présence d'une sténose, 
+effets de la pulsatilité, rôle d'une anastomose, etc...), issus par exemple d'articles 
+scientifiques dont vous chercherez:
+- à retrouver les résultats,
+- à analyser les approches utilisées en les comparant avec d'autres,
+- à modifier le cas étudié (ajout d'un sténose, prise en compte d'une autre partie du réseau vasculaire, etc...)
+- etc...
 
-_Présentation des projets 2021-2022_
-
-### Projets proposés
+### _Présentation des projets 2021-2022_
 
 1. Effet d'une sténose carotidienne sur l'écoulement cérébral
 2. Propagation des ondes de pression et de débit dans un réseau vasculaire
