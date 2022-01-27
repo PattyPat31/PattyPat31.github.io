@@ -29,4 +29,5 @@ scientifiques dont vous chercherez:
 1. Ecoulement sanguin cérébral: _A global mathematical model of the cerebral circulation in man_ (Zagzoule & Marc-Vergnes) + ajout d'une sténose + effets instationnaires + etc...
 2. Autorégulation cérébrale: _A global mathematical model of the cerebral circulation in man_ (Zagzoule & Marc-Vergnes) + autorégulation
 3. Propagation des ondes dans l'aorte: _Nonlinear Analysis of Flow Pulses and Shock Waves in Arteries_ (Anliker et al.)
-4. Ecoulement dans le réseau artériel: _Theorotical Analysis of Arterial Hemodynamics including the Influence of Bifurcations_ (Stettler et al.)
+4. Ecoulement dans le réseau artériel systémique: _Theorotical Analysis of Arterial Hemodynamics including the Influence of Bifurcations_ (Stettler et al.)
+5. Autres,... _A discuter avec nous_ (EX: Modélisation dans autre partie du réseau vasulaire, ...)
