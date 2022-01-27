@@ -27,7 +27,7 @@ scientifiques dont vous chercherez:
 
 ## _Présentation des projets 2021-2022_
 
-1. Ecoulement sanguin cérébral: _A global mathematical model of the cerebral circulation in man_ (Zagzoule & Marc-Vergnes) + ajout d'une sténose + effets instationnaires + etc...
+1. [Ecoulement sanguin cérébral](projet_cbf.md)
 2. Autorégulation cérébrale: _A global mathematical model of the cerebral circulation in man_ (Zagzoule & Marc-Vergnes) + autorégulation
 3. [Propagation des ondes dans l'aorte](projet_aorte.md)
 4. [Ecoulement dans le réseau artériel systémique](projet_reseau_arteriel.md)
