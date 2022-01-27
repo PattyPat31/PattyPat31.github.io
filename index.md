@@ -7,11 +7,10 @@ Le cours se focalisera principalement sur la circulation sanguine.
 Il établira en particulier les différents modèles mathématiques d'écoulement de
 fluide dans des conduites souples.
 
-Les séances de TD seront dédiées à la mise en oeuvre de ces différents modèles,
-avec la prise en main de différents codes de simulation numérique:
+Les séances de TD seront dédiées à la mise en oeuvre de ces différents modèles (dans un seul 
+vaisseau ou dans un réseau de vaisseaux), avec la prise en main de différents codes de simulation numérique:
 - modélisation 0D
 - modélisation 1D
-dans un seul vaisseau ou dans un réseau de vaisseaux.
 
 La maîtrise de ces codes (disponibles en [dépôt GitHub](https://github.com/PattyPat31/Mecanique-du-vivant))
 vous permettront par la suite d'étudier différentes configurations.
