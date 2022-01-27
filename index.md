@@ -1,7 +1,7 @@
 ## Welcome to Physique du vivant
 
-Cette page du cours d'option du Master de Mécanique-Énergétique de l'UPS
-intitulé _Physique du Vivant_, est dédiée à la partie apprentissage par projet.
+Cette page du cours d'option _Physique du Vivant_ du Master de Mécanique-Énergétique de l'UPS
+est dédiée à la partie **apprentissage par projet** de ce cours.
 
 Le cours se focalisera principalement sur la circulation sanguine.
 Il établira en particulier les différents modèles mathématiques d'écoulement de
@@ -9,11 +9,12 @@ fluide dans des conduites souples.
 
 Les séances de TD seront dédiées à la mise en oeuvre de ces différents modèles,
 avec la prise en main de différents codes de simulation numérique:
-- modélisation 0D dans un ou plusieurs vaisseaux
-- modélisation 1D dans un ou plusieurs vaisseaux
+- modélisation 0D
+- modélisation 1D
+dans un seul vaisseau ou dans un réseau de vaisseaux.
 
 La maîtrise de ces codes (disponibles en [dépôt GitHub](https://github.com/PattyPat31/Mecanique-du-vivant))
-vous permettrons par la suite d'étudier différentes configurations.
+vous permettront par la suite d'étudier différentes configurations.
 
 Avec les projets, vous pourrez enfin mettre vous même tout ça en musique sur
 des exemples concrêts (circulation cérébrale, écoulement en présence d'une sténose, 
