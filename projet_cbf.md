@@ -4,3 +4,4 @@
 
 **Modifications**: + ajout d'une sténose + effets instationnaires sur les frottements pariétaux + etc...
 
+Test d'ecriture
