@@ -16,7 +16,7 @@ La maîtrise de ces codes (disponibles en [dépôt GitHub](https://github.com/Pa
 vous permettront par la suite d'étudier différentes configurations.
 
 Avec les projets, vous pourrez enfin mettre vous même tout ça en musique sur
-des exemples concrêts (circulation cérébrale, écoulement en présence d'une sténose, 
+des exemples concrets (circulation cérébrale, écoulement en présence d'une sténose, 
 effets de la pulsatilité, rôle d'une anastomose, etc...), issus par exemple d'articles 
 scientifiques dont vous chercherez:
 - à retrouver les résultats,
