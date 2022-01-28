@@ -26,8 +26,8 @@ scientifiques dont vous chercherez:
 
 ## _Présentation des projets 2021-2022_
 
-1. [Ecoulement sanguin cérébral](projet_cbf.md)
-2. [Autorégulation cérébrale](projet_autoregulation.md)
-3. [Propagation des ondes dans l'aorte](projet_aorte.md)
-4. [Ecoulement dans le réseau artériel systémique](projet_reseau_arteriel.md)
+1. [Propagation des ondes dans l'aorte](projet_aorte.md)
+2. [Ecoulement dans le réseau artériel systémique](projet_reseau_arteriel.md)
+3. [Ecoulement sanguin cérébral](projet_cbf.md)
+4. [Autorégulation cérébrale](projet_autoregulation.md)
 5. Autres,... _A discuter avec nous_ (EX: Modélisation dans autre partie du réseau vasulaire, ...)
