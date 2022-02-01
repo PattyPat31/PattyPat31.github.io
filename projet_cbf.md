@@ -5,5 +5,7 @@
 **Sujet**: Construire un modéle 1D de l'écoulement sanguin dans le cerveau et étudier l'effet d'une sténose sur
 une artère cérébrale.
 
+**Documentations**: [Livres, Articles](https://www.dropbox.com/sh/ipfdfq2ly4bpoxs/AACzEPJskqzyzTEyYm4CnKdBa?dl=0)
+
 **Plan de travail**: construction du réseau vasculaire + ajout d'une sténose + effets instationnaires sur les frottements pariétaux + etc...
 
