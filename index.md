@@ -18,6 +18,7 @@ vous permettront par la suite d'étudier différentes configurations.
 L'objectif de cette première partie sera d'étudier sur un cas simple (un seul tube, une bifurcation, etc...) 
 les effets de differents paramètres (conditions aux limites, loi de tube, rhéologie du fluide, effets instationnaires
 sur la contrainte pariétale, etc...) sur l'écoulement (la propagation des ondes, stroke volume, etc...).
+
 [Résultats première partie](TP.md)
 
 Avec les projets, vous pourrez enfin mettre vous même tout ça en musique sur
