@@ -8,12 +8,16 @@ Il établira en particulier les différents modèles mathématiques d'écoulemen
 fluide dans des conduites souples.
 
 Les séances de TD seront dédiées à la mise en oeuvre de ces différents modèles (dans un seul 
-vaisseau ou dans un réseau de vaisseaux), avec la prise en main de différents codes de simulation numérique:
+vaisseau ou dans un réseau de vaisseaux), avec la réalisation et la prise en main
+de différents codes de simulation numérique:
 - modélisation 0D
 - modélisation 1D
 
-La maîtrise de ces codes (disponibles en [dépôt GitHub](https://github.com/PattyPat31/Mecanique-du-vivant))
+La maîtrise de ces codes (certains disponibles en [dépôt GitHub](https://github.com/PattyPat31/Mecanique-du-vivant))
 vous permettront par la suite d'étudier différentes configurations.
+L'objectif de cette première partie sera d'étudier sur un cas simple (un seul tube, une bifurcation, etc...) 
+les effets de differents paramètres (conditions aux limites, loi de tube, rhéologie du fluide, effets instationnaires
+sur la contrainte pariétale, etc...) sur l'écoulement (la propagation des ondes, stroke volume, etc...).
 
 Avec les projets, vous pourrez enfin mettre vous même tout ça en musique sur
 des exemples concrets (circulation cérébrale, écoulement en présence d'une sténose, 
