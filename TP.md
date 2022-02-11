@@ -12,5 +12,5 @@ Préciser bien les valeurs de vos paramètres. Par exemple:
 
 Bien entendu, vous illustrerez vos résultats par des figures pertinentes:
 <p align="center">
-<img src="image/TP/arterial_tree.jpg" alt="Arterial Tree" style="width:20%; border:0;">
+<img src="Images/TP/Arterial_tree.jpg" alt="Arterial Tree" style="width:20%; border:0;">
 </p>
