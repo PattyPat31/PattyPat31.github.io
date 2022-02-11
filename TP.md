@@ -9,7 +9,7 @@ Préciser bien les valeurs de vos paramètres. Par exemple:
  - Section au repos A<sub>0</sub>=``0.1361`` cm<sup>2</sup>
  - Longueur du vaisseau L=``25`` cm
  - etc...
-
+i
 Bien entendu, vous illustrerez vos résultats par des figures pertinentes:
 <p align="center">
 <img src="Images/TP/Arterial_tree.jpg" alt="Arterial Tree" style="width:20%; border:0;">
