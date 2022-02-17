@@ -2,7 +2,7 @@
 
 **Présentation des cas étudiés et interprétation des résultats**
 
-Vois décrirez ici vos cas tests (propagation d'un pulse dans un vaisseau, 
+Vous décrirez ici vos cas tests (propagation d'un pulse dans un vaisseau, 
 étude des réflexions aux conditions aux limites, etc...)
 Préciser bien les valeurs de vos paramètres. Par exemple:
  - Elastance du tube E<sub>L</sub>=``1367000`` dyn/cm<sup>2</sup>
