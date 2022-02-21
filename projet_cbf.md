@@ -5,7 +5,7 @@
 **Sujet**: Construire un modéle 1D de l'écoulement sanguin dans le cerveau et étudier l'effet d'une sténose sur
 une artère cérébrale.
 
-**Galey Quentin et Bouhier Willy
+**Galey Quentin et Bouhier Willy**
 
 **Documentations**: [Livres, Articles](https://www.dropbox.com/sh/ipfdfq2ly4bpoxs/AACzEPJskqzyzTEyYm4CnKdBa?dl=0)
 
