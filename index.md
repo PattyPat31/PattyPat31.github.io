@@ -34,6 +34,6 @@ scientifiques dont vous chercherez:
 
 1. [Propagation des ondes dans l'aorte](projet_aorte.md)
 2. [Ecoulement dans le réseau artériel systémique](projet_reseau_arteriel.md)
-3. [Ecoulement sanguin cérébral](projet_cbf.md)
-4. [Autorégulation cérébrale](projet_autoregulation.md)
+3. [Modélisation sténose artérielle cérébrale](projet_cbf.md)
+4. [Modélisation réseau veineux cérébral](projet_autoregulation.md)
 5. Autres,... _A discuter avec nous_ (EX: Modélisation dans autre partie du réseau vasulaire, ...)
