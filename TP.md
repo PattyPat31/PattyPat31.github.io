@@ -11,18 +11,21 @@ Préciser bien les valeurs de vos paramètres. Par exemple:
  - etc...
 
 Bien entendu, vous illustrerez vos résultats par des figures pertinentes:
-<p align="center">
-<img src="Images/TP/Arterial_tree.jpg" alt="Arterial Tree" style="width:20%; border:0;">
-</p>
+
 
 
 # Résultats : Prise de pression et de débit à différents endroits dans le tube
 
+Nous nous sommes basés sur le cas d'un pulse en entrée pour faire ces essais.
+
+<p align="center">
+<img src="Images/TP/pression - diff parties.jpg" alt="Arterial Tree" style="width:100%; border:0;">
+</p>
 
 
-
-
-
+<p align="center">
+<img src="Images/TP/pression - diff parties.jpg" alt="Arterial Tree" style="width:100%; border:0;">
+</p>
 
 
 
