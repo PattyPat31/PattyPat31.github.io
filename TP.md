@@ -14,3 +14,16 @@ Bien entendu, vous illustrerez vos résultats par des figures pertinentes:
 <p align="center">
 <img src="Images/TP/Arterial_tree.jpg" alt="Arterial Tree" style="width:20%; border:0;">
 </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
