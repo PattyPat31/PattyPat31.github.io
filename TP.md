@@ -18,6 +18,9 @@ Bien entendu, vous illustrerez vos résultats par des figures pertinentes:
 
 
 
+$\sum_{i=1}^n X_i$ 
+
+
 
 
 
