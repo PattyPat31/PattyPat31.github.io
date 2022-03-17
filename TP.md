@@ -16,9 +16,9 @@ Bien entendu, vous illustrerez vos résultats par des figures pertinentes:
 </p>
 
 
+# Résultats : Prise de pression et de débit à différents endroits dans le tube
 
 
-$$\sum_{i=1}^n X_i$$ 
 
 
 
