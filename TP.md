@@ -44,8 +44,22 @@ puis, cette perturbation se propagerait tout le long du tube.
 
 
 <p align="center">
-<img src="Images/TP/pression - diff parties.jpg" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/test4.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
+
+
+<p align="center">
+<img src="Images/TP/entreesortie.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+
+
+<p align="center">
+<img src="Images/TP/entreemilsortie.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+
+
 
 
 
