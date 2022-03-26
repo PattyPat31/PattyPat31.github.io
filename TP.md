@@ -1,39 +1,59 @@
-# Résultats du TP
+# Résultats du TP : 
 
 **Présentation des cas étudiés et interprétation des résultats**
 
-Vous décrirez ici vos cas tests (propagation d'un pulse dans un vaisseau, 
-étude des réflexions aux conditions aux limites, etc...)
-Préciser bien les valeurs de vos paramètres. Par exemple:
- - Elastance du tube E<sub>L</sub>=``1367000`` dyn/cm<sup>2</sup>
- - Section au repos A<sub>0</sub>=``0.1361`` cm<sup>2</sup>
- - Longueur du vaisseau L=``25`` cm
- - etc...
 
-Bien entendu, vous illustrerez vos résultats par des figures pertinentes:
+La première partie de notre travail dans ce cours s'est basée sur une simulation numérique 0D (ne considérant que le temps comme variable, donc n'ayant aucune dépendance spatiale), qui permet de modéliser la manière dont le sang s’écoule dans un vaisseau sanguin. 
+
+C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance ou viscosité que nous avons pu mettre au point les résultats de la partie qui suit.
 
 
 
-# Résultats : Prise de pression et de débit à différents endroits dans le tube
 
-Nous nous sommes basés sur le cas d'un pulse en entrée pour faire ces essais.
+
+
+## Résultats : Nouvelle condition d'entrée - pulse
+
+Comme le coeur envoie du sang dans les artères de manière pulsée, il fut rapidement envisagé de reproduire une pulsation à l'entrée du vaisseau que l'on souhaite modéliser.
+
+Nous souhaitons donc reproduire une surpression à l'entrée du tube.
+Pour modéliser cela, nous avons changé les paramètres de pression en entrée pour y faire intervenir une sinusoïde (pour obtenir des résultats plus lisibles).
+
+La pression aurait donc la forme suivante en entrée :
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=P_{max}sin\left(\frac{t\pi}{T_{pulse}}\right)">
+</p>
+
+puis, cette perturbation se propagerait tout le long du tube.
+
 
 <p align="center">
 <img src="Images/TP/pression - diff parties.jpg" alt="Arterial Tree" style="width:100%; border:0;">
 </p>
 
 
+
+
+
+## Prise de pression et de débit à différents endroits dans le tube
+
+
+
+
+
+
+
 <p align="center">
 <img src="Images/TP/pression - diff parties.jpg" alt="Arterial Tree" style="width:100%; border:0;">
 </p>
 
-<p align="center">
-<img src="Images/TP/test4.pdf" alt="Arterial Tree" style="width:100%; border:0;">
-</p>
 
 
 <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 <img src="https://render.githubusercontent.com/render/math?math=\iint_3^4 f(x) dx">
+
+
 
 
 
