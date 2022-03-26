@@ -29,7 +29,7 @@ puis, cette perturbation se propagerait tout le long du tube.
 
 
 <p align="center">
-<img src="Images/TP/pulse.png" alt="Arterial Tree" style="width:70%; border:0;">
+![testpulse](https://user-images.githubusercontent.com/99397785/160260628-69fa5277-fff0-48ac-a3a9-450350669138.png)
 </p>
 
 
@@ -59,11 +59,4 @@ puis, cette perturbation se propagerait tout le long du tube.
 </p>
 
 
-
-
-
-
-
-
-
-
+![test4](https://user-images.githubusercontent.com/99397785/160260491-05725247-7d42-4916-8fa5-5b49057aff8d.png)
