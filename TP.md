@@ -29,7 +29,7 @@ puis, cette perturbation se propagerait tout le long du tube.
 
 
 <p align="center">
-<img src="Images/TP/pression - diff parties.jpg" alt="Arterial Tree" style="width:100%; border:0;">
+<img src="Images/TP/pulse.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
 
@@ -43,15 +43,9 @@ puis, cette perturbation se propagerait tout le long du tube.
 
 
 
-
 <p align="center">
-<img src="Images/TP/pression - diff parties.jpg" alt="Arterial Tree" style="width:100%; border:0;">
+<img src="Images/TP/pression - diff parties.jpg" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
-
-
-
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
-<img src="https://render.githubusercontent.com/render/math?math=\iint_3^4 f(x) dx">
 
 
 
