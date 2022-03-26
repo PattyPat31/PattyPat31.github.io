@@ -27,9 +27,8 @@ La pression aurait donc la forme suivante en entrée :
 
 puis, cette perturbation se propagerait tout le long du tube.
 
-
 <p align="center">
-![testpulse](https://user-images.githubusercontent.com/99397785/160260628-69fa5277-fff0-48ac-a3a9-450350669138.png)
+<img src="Images/TP/testpulse.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
 
@@ -44,19 +43,17 @@ puis, cette perturbation se propagerait tout le long du tube.
 
 
 <p align="center">
-<img src="Images/TP/test4.png" alt="Arterial Tree" style="width:70%; border:0;">
-</p>
-
-
-<p align="center">
 <img src="Images/TP/entreesortie.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
 
-
 <p align="center">
-<img src="Images/TP/entreemilsortie.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/entreemilieusortie.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
 
-![test4](https://user-images.githubusercontent.com/99397785/160260491-05725247-7d42-4916-8fa5-5b49057aff8d.png)
+
+<p align="center">
+<img src="Images/TP/touslespoints.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
