@@ -27,6 +27,11 @@ Nous nous sommes basés sur le cas d'un pulse en entrée pour faire ces essais.
 <img src="Images/TP/pression - diff parties.jpg" alt="Arterial Tree" style="width:100%; border:0;">
 </p>
 
+<p align="center">
+<img src="Images/TP/test4.pdf" alt="Arterial Tree" style="width:100%; border:0;">
+</p>
+
+
 <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 <img src="https://render.githubusercontent.com/render/math?math=\iint_3^4 f(x) dx">
 
