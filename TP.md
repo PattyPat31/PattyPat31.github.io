@@ -57,3 +57,9 @@ puis, cette perturbation se propagerait tout le long du tube.
 <img src="Images/TP/touslespointspression.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
+
+
+<p align="center">
+<img src="Images/TP/touslespointsdebit.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
