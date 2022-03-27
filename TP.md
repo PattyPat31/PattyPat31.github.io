@@ -37,6 +37,17 @@ Les résultats relatifs aux essais avec cette nouvelle condition d'entrée pourr
 
 ## Prise de pression et de débit à différents endroits dans le tube
 
+
+Les résultats présentés ici seront basés sur les paramètres suivants :
+
+- Elastance du tube : 136700
+- Section du tube : 0.1361
+- Longueur du tube : 25
+- Densité du fluide : 1.06
+- Viscosité du fluide : 0.035
+
+
+On travaille ici sur un fluide supposé newtonien, la viscosité sera donc supposée constante.
 En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, il vient :
 
 <p align="center">
@@ -48,21 +59,34 @@ La pression en sortie est significativement supérieure au pulse imposé en entr
 Nous pouvons d'ailleurs mettre cela en parallèle avec l'évolution du débit à ces deux points de mesure : 
 
 <p align="center">
-<img src="Images/TP/entreesortie.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/entreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
+
+
+
+
+
+
+
+
 
 
 
 
 Un des problèmes pouvant limiter notre analyse dans ce TP est dû aux variables choisies pour tracer l'évolution des paramètres du tube. Si nous ne prenions que l'évolution au cours du temps de ce qu'il se passe en entrée et/ou en sortie, nous ne pourrions pas vérifier le fonctionnement intermédiaire du programme.
 
-Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le long du tube, nous pre
+Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le long du tube, nous prenons des mesures également au milieu de celui-ci.
 
 
 
 <p align="center">
 <img src="Images/TP/entreemilieusortie.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
+
+
+
+En augmentant encore le nombre de points de mesure :
+
 
 
 
@@ -79,3 +103,8 @@ Le même affichage peut être mis en place pour la mesure des débits en fonctio
 <img src="Images/TP/touslespointsdebits.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
+
+
+
+Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en grande partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 0D. 
+Il sera donc présenté par la suite une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
