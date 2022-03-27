@@ -22,7 +22,7 @@ Pour modéliser cela, nous avons changé les paramètres de pression en entrée 
 La pression aurait donc la forme suivante en entrée :
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=P_{max}sin\left(\frac{t\pi}{T_{pulse}}\right)">
+<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=P_{max} * sin\left(\frac{t\pi}{T_{pulse}}\right)">
 </p>
 
 puis, cette perturbation se propagerait tout le long du tube.
@@ -60,6 +60,6 @@ puis, cette perturbation se propagerait tout le long du tube.
 
 
 <p align="center">
-<img src="Images/TP/touslespointsdebit.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/touslespointsdebits.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
