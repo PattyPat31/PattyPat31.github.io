@@ -8,10 +8,6 @@ La première partie de notre travail dans ce cours s'est basée sur une simulati
 C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance ou viscosité que nous avons pu mettre au point les résultats de la partie qui suit.
 
 
-
-
-
-
 ## Résultats : Nouvelle condition d'entrée - pulse
 
 Comme le coeur envoie du sang dans les artères de manière pulsée, il fut rapidement envisagé de reproduire une pulsation à l'entrée du vaisseau que l'on souhaite modéliser.
@@ -40,14 +36,15 @@ Les résultats relatifs aux essais avec cette nouvelle condition d'entrée pourr
 
 Les résultats présentés ici seront basés sur les paramètres suivants :
 
-- Elastance du tube : 136700
-- Section du tube : 0.1361
-- Longueur du tube : 25
-- Densité du fluide : 1.06
-- Viscosité du fluide : 0.035
+- Elastance du tube E<sub>L</sub> : ``1367000`` dyn/cm<sup>2</sup>
+- Section du tube : ``0.1361`` cm<sup>2</sup>
+- Longueur du tube  L : ``25`` cm
+- Densité du fluide : ``1.06`` kg/m<sup>3</sup>
+- Viscosité du fluide : ``35`` millipoises [mP]
 
+Ces données réfèrent à du sang passant dans une carotide.
+On travaille ici sur un fluide supposé newtonien, la viscosité sera donc supposée constante. De même, on suppose ici la section A<sub>0</sub> constante.
 
-On travaille ici sur un fluide supposé newtonien, la viscosité sera donc supposée constante.
 En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, il vient :
 
 <p align="center">
