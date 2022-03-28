@@ -18,7 +18,7 @@ Pour modéliser cela, nous avons changé les paramètres de pression en entrée 
 La pression aurait donc la forme suivante en entrée :
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=P_{max} * sin\left(\frac{t\pi}{T_{pulse}}\right)">
+<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=P_{max} * sin\left(\frac{\pi t}{T_{pulse}}\right)">
 </p>
 
 puis, cette perturbation se propagerait tout le long du tube.
@@ -28,7 +28,7 @@ Si nous traçons cette perturbation de pression en entrée en fonction du temps,
 <img src="Images/TP/testpulse.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
-Les résultats relatifs aux essais avec cette nouvelle condition d'entrée pourront être développés par la suite.
+Les résultats relatifs aux essais avec cette nouvelle condition d'entrée seront développés par la suite.
 
 
 ## Prise de pression et de débit à différents endroits dans le tube
@@ -53,17 +53,22 @@ En reprenant la condition d'entrée introduite précédemment et en traçant la 
 
 La pression en sortie est significativement supérieure au pulse imposé en entrée (plus de deux fois supérieure). Cela est dû notamment aux refléxions tout au long du tube, qui pousse une plus grande quantité à la fois à la sortie du tube et provoque une surpression.
 
+
+
+
+
+
 Nous pouvons d'ailleurs mettre cela en parallèle avec l'évolution du débit à ces deux points de mesure : 
 
 <p align="center">
 <img src="Images/TP/entreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
+Le débit en sortie du tube est bien moins important qu'en entrée, tandis qu'un important pic négatif (courbe bleue) se profile après le signal en sortie. 
+Cela peut s'expliquer par les conditions de sortie que nous avons imposé pour ce tube. Le débit étant supposé nul en sortie dans notre programme, cela impose pour notre modèle de mettre en place une sorte de débit négatif, venant contrer et 'annuler' le débit incident à la sortie du tube. 
+Ce même phénomène peut également expliquer l'intensité du pic de pression en sortie, puisque l'on s'attend bien à avoir deux fois plus de pression dans une même zone, celle amenée initialement par l'onde de pulsation ainsi que celle du flux renvoyé.
 
-
-
-
-
+**A VERIFIER**
 
 
 
@@ -76,14 +81,17 @@ Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le
 
 
 
+
 <p align="center">
 <img src="Images/TP/entreemilieusortie.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
+Le même phénomène de reflux est perceptible au milieu du tube, même s'il est moins prononcé qu'en sortie.
 
+Autrement, on peut déjà voir ici que la pression n'a plus la même allure au milieu du tube, le pic y étant plus faible qu'en entrée. 
+La résistance périphérique (résistance des parois du tube lors du passage du sang) n'étant pas nulle pour notre essai, il se peut que des pertes de charge tout au long du tube soient à l'origine de cette modification.
 
-En augmentant encore le nombre de points de mesure :
-
+Pour vérifier cela, on peut augmenter encore le nombre de points de mesure :
 
 
 
@@ -91,6 +99,19 @@ En augmentant encore le nombre de points de mesure :
 <img src="Images/TP/touslespointspression.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
+En réalité, les pics de pression relevés tout au long du tube semblent décroître, en partant de la sortie du tube et jusqu'au quart de celui-ci.
+L'hypothèse des pertes de charge ne permet donc pas d'expliquer une telle évolution de la pression dans le tube.
+
+
+Nous avons donc pu envisager que ces résultats étaient peut-être dûs à un mauvais relevé des pressions au cours du temps. 
+En effet, pour relever les données de pression, il nous faut mettre en place un schéma de calcul suffisamment en avance sur l'onde à analyser pour pouvoir relever des résultats, sans pour autant être trop rapide pour ne pas omettre des informations pouvant être trop éloignées temporellement de ce que l'on souhaite obtenir.
+Cette condition de 'vitesse de relevé' à respecter, la condition CFL, pourrait être à l'origine de nos résultats inexplicables.
+
+Nous sommes partis de base sur un CFL valant 3 fois la vitesse de l'onde produite dans notre modèle. En prenant une condition CFL de 2.5 fois la vitesse de l'onde, nous obtenons la figure suivante : 
+
+<p align="center">
+<img src="Images/TP/touslespointspression.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
 
 
 
