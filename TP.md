@@ -3,7 +3,7 @@
 **Présentation des cas étudiés et interprétation des résultats**
 
 
-La première partie de notre travail dans ce cours s'est basée sur une simulation numérique 0D (ne considérant que le temps comme variable, donc n'ayant aucune dépendance spatiale), qui permet de modéliser la manière dont le sang s’écoule dans un vaisseau sanguin. 
+La première partie de notre travail dans ce cours s'est basée sur une simulation numérique 1D (considérant que le temps et la position longitudinale dans le tube comme variables), qui permet de modéliser la manière dont le sang s’écoule dans un vaisseau sanguin. 
 
 C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance ou viscosité que nous avons pu mettre au point les résultats de la partie qui suit.
 
@@ -56,26 +56,36 @@ La pression en sortie est significativement supérieure au pulse imposé en entr
 
 
 
-
-
 Nous pouvons d'ailleurs mettre cela en parallèle avec l'évolution du débit à ces deux points de mesure : 
 
 <p align="center">
 <img src="Images/TP/entreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
-Le débit en sortie du tube est bien moins important qu'en entrée, tandis qu'un important pic négatif (courbe bleue) se profile après le signal en sortie. 
-Cela peut s'expliquer par les conditions de sortie que nous avons imposé pour ce tube. Le débit étant supposé nul en sortie dans notre programme, cela impose pour notre modèle de mettre en place une sorte de débit négatif, venant contrer et 'annuler' le débit incident à la sortie du tube. 
-Ce même phénomène peut également expliquer l'intensité du pic de pression en sortie, puisque l'on s'attend bien à avoir deux fois plus de pression dans une même zone, celle amenée initialement par l'onde de pulsation ainsi que celle du flux renvoyé.
-
-**A VERIFIER**
+Le débit en sortie du tube est bien moins important qu'en entrée, tandis qu'un important pic négatif (courbe bleue) se profile après le signal en sortie.
+Cela peut venir des conditions de sortie imposées dans notre programme. En effet, nous considérons une condition de type Windkessel en sortie du tube. La résistance  
+périphérique (résistance le long des parois du tube lors de l'écoulement du sang) y est définie par : 
 
 
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=R_{parois} = \frac{P_{entree} - P_{sortie}}{Q}">
+</p>
+
+Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus moindre qu'ailleurs.
+
+Le sang réfléchi dans le sens inverse de l'écoulement peut même ressortir du tube par l'entrée, d'où le débit négatif observé quelques temps après le pic de débit en sortie.
+
+
+
+Ce phénomène peut également expliquer l'intensité du pic de pression en sortie, puisque l'on s'attend bien à avoir plus de pression dans une cette même zone, celle amenée initialement par l'onde de pulsation ainsi que celle du flux renvoyé.
 
 
 
 
-Un des problèmes pouvant limiter notre analyse dans ce TP est dû aux variables choisies pour tracer l'évolution des paramètres du tube. Si nous ne prenions que l'évolution au cours du temps de ce qu'il se passe en entrée et/ou en sortie, nous ne pourrions pas vérifier le fonctionnement intermédiaire du programme.
+
+
+
+Un des problèmes pouvant limiter notre analyse dans ce TP est dû aux endroits choisis dans le tube pour tracer l'évolution des paramètres. Si nous ne prenions que l'évolution au cours du temps de ce qu'il se passe en entrée et/ou en sortie, nous ne pourrions pas vérifier le fonctionnement intermédiaire du programme.
 
 Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le long du tube, nous prenons des mesures également au milieu de celui-ci.
 
@@ -89,7 +99,7 @@ Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le
 Le même phénomène de reflux est perceptible au milieu du tube, même s'il est moins prononcé qu'en sortie.
 
 Autrement, on peut déjà voir ici que la pression n'a plus la même allure au milieu du tube, le pic y étant plus faible qu'en entrée. 
-La résistance périphérique (résistance le long des parois du tube lors de l'écoulement du sang) n'étant pas nulle pour notre essai, il se peut que des pertes de charge tout au long du tube soient à l'origine de cette modification.
+La résistance périphérique n'étant pas nulle pour notre essai, il se peut que des pertes de charge tout au long du tube soient à l'origine de cette modification.
 
 Pour vérifier cela, on peut augmenter encore le nombre de points de mesure :
 
@@ -138,7 +148,6 @@ Le meilleur résultat que nous pourrons donc obtenir est celui présenté ci-des
 
 
 
-
 D'autre part, ce même affichage peut être mis en place pour la mesure des débits en fonction du temps :
 
 <p align="center">
@@ -150,6 +159,20 @@ Ici, le débit en sortie diminue drastiquement à cause de la condition imposée
 
 
 
+## Essai de nouvelles conditions de sortie :
+
+
+
+
+
+
+
+
+
+
+
+
 Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en grande partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 0D. 
 Il sera donc présenté par la suite une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
+
 
