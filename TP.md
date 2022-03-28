@@ -89,7 +89,7 @@ Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le
 Le même phénomène de reflux est perceptible au milieu du tube, même s'il est moins prononcé qu'en sortie.
 
 Autrement, on peut déjà voir ici que la pression n'a plus la même allure au milieu du tube, le pic y étant plus faible qu'en entrée. 
-La résistance périphérique (résistance des parois du tube lors du passage du sang) n'étant pas nulle pour notre essai, il se peut que des pertes de charge tout au long du tube soient à l'origine de cette modification.
+La résistance périphérique (résistance le long des parois du tube lors de l'écoulement du sang) n'étant pas nulle pour notre essai, il se peut que des pertes de charge tout au long du tube soient à l'origine de cette modification.
 
 Pour vérifier cela, on peut augmenter encore le nombre de points de mesure :
 
@@ -126,21 +126,30 @@ Nous essayons donc encore de réduire cette condition CFL, cette fois ci à 2.2 
 </p>
 
 Nous obtenons enfin des résultats cohérents avec ce que nous aurions pu imaginer jusqu'à la fin du tube. 
+Il est donc à présent plus envisageable de reconsidérer que les pertes de charge soient bien à l'origine des différences tout au long du tube.
 
-La condition CFL n'étant pas remplie indéfiniment, nous ne pouvons plus obtenir de résultats pour une vitesse de relevé égale ou inférieure à 2.1 fois celle de l'onde. Le meilleur résultat que nous pourrons donc obtenir est celui présenté ci-dessus.
-
-
-
+L'écoulement étant freiné au cours de son évolution notamment au niveau des parois et à cause de sa viscosité, il ne peut pas y avoir exactement la même quantité de sang à chaque endroit du tube à un instant t, une partie étant restée en arrière. Cela peut bien expliquer cette différence de pression dans notre tube.
 
 
-Le même affichage peut être mis en place pour la mesure des débits en fonction du temps :
+La condition CFL n'étant pas remplie indéfiniment, nous ne pouvons plus obtenir de résultats pour une vitesse de relevé égale ou inférieure à 2.1 fois celle de l'onde. L'onde étant déjà passée dans la zone 'traitée' par notre schéma de calcul à un instant t, nous ne pouvons plus rien en retirer.
+
+Le meilleur résultat que nous pourrons donc obtenir est celui présenté ci-dessus.
+
+
+
+
+
+D'autre part, ce même affichage peut être mis en place pour la mesure des débits en fonction du temps :
 
 <p align="center">
-<img src="Images/TP/touslespointsdebits.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/entreesortiedebit22.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
+
+Ici, le débit en sortie diminue drastiquement à cause de la condition imposée en sortie mais les pics de débit diminuent à priori de la même manière que pour la pression et à cause des mêmes pertes de charge au long du tube.
 
 
 
 Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en grande partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 0D. 
 Il sera donc présenté par la suite une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
+
