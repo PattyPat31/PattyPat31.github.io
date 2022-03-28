@@ -100,7 +100,7 @@ Pour vérifier cela, on peut augmenter encore le nombre de points de mesure :
 </p>
 
 En réalité, les pics de pression relevés tout au long du tube semblent décroître, en partant de la sortie du tube et jusqu'au quart de celui-ci.
-L'hypothèse des pertes de charge ne permet donc pas d'expliquer une telle évolution de la pression dans le tube.
+L'hypothèse des pertes de charge ne permet donc pas à priori d'expliquer une telle évolution de la pression dans le tube.
 
 
 Nous avons donc pu envisager que ces résultats étaient peut-être dûs à un mauvais relevé des pressions au cours du temps. 
@@ -110,8 +110,26 @@ Cette condition de 'vitesse de relevé' à respecter, la condition CFL, pourrait
 Nous sommes partis de base sur un CFL valant 3 fois la vitesse de l'onde produite dans notre modèle. En prenant une condition CFL de 2.5 fois la vitesse de l'onde, nous obtenons la figure suivante : 
 
 <p align="center">
-<img src="Images/TP/touslespointspression.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/touslespointspression25.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
+
+
+
+Il apparaît en effet bien, cette fois-ci, que le pic diminue jusqu'à ce que l'on arrive aux trois quarts du tube. Le niveau du pic repart cependant encore à la hausse après ce passage. 
+
+Nous essayons donc encore de réduire cette condition CFL, cette fois ci à 2.2 fois la vitesse de l'onde :
+
+
+
+<p align="center">
+<img src="Images/TP/touslespointspression22.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+Nous obtenons enfin des résultats cohérents avec ce que nous aurions pu imaginer jusqu'à la fin du tube. 
+
+La condition CFL n'étant pas remplie indéfiniment, nous ne pouvons plus obtenir de résultats pour une vitesse de relevé égale ou inférieure à 2.1 fois celle de l'onde. Le meilleur résultat que nous pourrons donc obtenir est celui présenté ci-dessus.
+
+
 
 
 
