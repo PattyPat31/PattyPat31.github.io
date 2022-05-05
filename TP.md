@@ -12,14 +12,43 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 
 
 
+
+
+
+
+
+## Nouvelle condition d'entrée - pulse
+
+Comme le coeur envoie du sang dans les artères de manière pulsée, il fut rapidement envisagé de reproduire une pulsation à l'entrée du vaisseau que l'on souhaite modéliser.
+
+Nous souhaitons donc reproduire une surpression à l'entrée du tube.
+Pour modéliser cela, nous avons changé les paramètres de pression en entrée pour y faire intervenir une sinusoïde (pour obtenir des résultats plus lisibles).
+
+La pression aurait donc la forme suivante en entrée :
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=P_{max} * sin\left(\frac{\pi t}{T_{pulse}}\right)">
+</p>
+
+puis, cette perturbation se propagerait tout le long du tube.
+Si nous traçons cette perturbation de pression en entrée en fonction du temps, nous pouvons obtenir la figure suivante :
+
+<p align="center">
+<img src="Images/TP/testpulse.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+Les résultats relatifs aux essais avec cette nouvelle condition d'entrée seront développés par la suite.
+
+
+
+
+
 ## Variations de la densité du sang passant dans le tube
 
 
-Augmenter la densité décale les courbes de sorties par rapport à celles d’entrée. On en déduit que la vitesse de propagation augmente, car celles-ci mettent plus de temps à atteindre la fin du tube. 
-On peut déduire la vitesse des ondes en mesurant la différences de temps entre les 2 sommets des courbes. En connaissant la longueur du tube (20cm) ; on calcule le t = d/v. 
+Nous avons choisi de tester le comportement de ce modèle 1D en mettant en évidence l'impact de la densité du sang qui le traverse sur l'évolution de la pression et du débit, en entrée et en sortie du tube.
 
-On remarque aussi que la pression baisse entre l’entrée et la sortie quand la densité est inférieur à 1.
-
+Ici, le tube choisi a une longueur de 20cm, les paramètres sont similaires à ce qui a été établi précédemment (nous conservons un pulse en entrée).
 
 
 
@@ -31,11 +60,21 @@ On remarque aussi que la pression baisse entre l’entrée et la sortie quand la
 pulse pour une densité de 0.01/ de 0.1
 </p>
 
-<img src="Images/TP/densité 1 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+
+
+On remarque aussi que la pression baisse entre l’entrée et la sortie quand la densité est inférieur à 1.
+
+
+<p align="center">
+<img src="Images/TP/densité 1 PM.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
 
 <p align="center">
 pulse pour une densité de 1
 </p>
+
+
+
 
 <img src="Images/TP/densité 5 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
 <img src="Images/TP/densité 10 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
@@ -66,27 +105,15 @@ pulse pour une densité de 100/ de 250
 pulse pour une densité de 500/ de 1000
 </p>
 
-## Résultats : Nouvelle condition d'entrée - pulse
 
-Comme le coeur envoie du sang dans les artères de manière pulsée, il fut rapidement envisagé de reproduire une pulsation à l'entrée du vaisseau que l'on souhaite modéliser.
+Augmenter la densité décale les courbes de sorties par rapport à celles d’entrée. On en déduit que la vitesse de propagation augmente, car celles-ci mettent plus de temps à atteindre la fin du tube. 
+On peut déduire la vitesse des ondes en mesurant la différences de temps entre les 2 sommets des courbes. En connaissant la longueur du tube (20cm) ; on calcule le t = d/v. 
 
-Nous souhaitons donc reproduire une surpression à l'entrée du tube.
-Pour modéliser cela, nous avons changé les paramètres de pression en entrée pour y faire intervenir une sinusoïde (pour obtenir des résultats plus lisibles).
 
-La pression aurait donc la forme suivante en entrée :
 
-<p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=P_{max} * sin\left(\frac{\pi t}{T_{pulse}}\right)">
-</p>
 
-puis, cette perturbation se propagerait tout le long du tube.
-Si nous traçons cette perturbation de pression en entrée en fonction du temps, nous pouvons obtenir la figure suivante :
 
-<p align="center">
-<img src="Images/TP/testpulse.png" alt="Arterial Tree" style="width:70%; border:0;">
-</p>
 
-Les résultats relatifs aux essais avec cette nouvelle condition d'entrée seront développés par la suite.
 
 
 ## Prise de pression et de débit à différents endroits dans le tube
