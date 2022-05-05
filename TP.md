@@ -3,7 +3,7 @@
 **Présentation des cas étudiés et interprétation des résultats**
 
 
-La première partie de notre travail dans cette UE s'est basée sur une simulation numérique 1D (ne considérant que la position longitudinale dans le tube et le temps comme variables), qui permet de modéliser la manière dont le sang s’écoule dans un vaisseau sanguin. 
+La première partie de notre travail dans ce cours s'est basée sur une simulation numérique 1D (ne considérant que la position longitudinale dans le tube et le temps comme variables), qui permet de modéliser la manière dont le sang s’écoule dans un vaisseau sanguin. 
 
 C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance et viscosité que nous avons pu mettre au point les résultats de cette page.
 
@@ -23,11 +23,7 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 
 ## Présentation du programme initial <a id="Presentation"></a>
 
-
-
-
-
-
+Pour tous nos tests, nous avons eu recours à un programme simulant les évolutions de différents paramètres dans un tube soumis au passage d'un fluide.
 
 
 
