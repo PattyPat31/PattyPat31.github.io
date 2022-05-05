@@ -3,15 +3,12 @@
 **Présentation des cas étudiés et interprétation des résultats**
 
 
-La première partie de notre travail dans ce cours s'est basée sur une simulation numérique 1D (considérant que le temps et la position longitudinale dans le tube comme variables), qui permet de modéliser la manière dont le sang s’écoule dans un vaisseau sanguin. 
+La première partie de notre travail dans cette UE s'est basée sur une simulation numérique 1D (ne considérant que la position longitudinale dans le tube et le temps comme variables), qui permet de modéliser la manière dont le sang s’écoule dans un vaisseau sanguin. 
 
-C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance ou viscosité que nous avons pu mettre au point les résultats de cette page.
-
-
+C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance et viscosité que nous avons pu mettre au point les résultats de cette page.
 
 
 &nbsp;
-
 
 
 | **Sommaire**   | 
@@ -21,12 +18,14 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 | [Variations de la densité du sang passant dans le tube ](#3)|
 | [Prise de pression et de débit à différents endroits dans le tube](#Diff)|
 | [Essai de nouvelles conditions de sortie](#Sortie)|
-
-
-
+| [ Modélisation linéaire du tube](#Lin)|
 
 
 ## Présentation du programme initial <a id="Presentation"></a>
+
+
+
+
 
 
 
@@ -65,7 +64,7 @@ Les résultats relatifs aux essais avec cette nouvelle condition d'entrée seron
 
 Nous avons choisi de tester le comportement de ce modèle 1D en mettant en évidence l'impact de la densité du sang qui le traverse sur l'évolution de la pression et du débit, en entrée et en sortie du tube.
 
-Ici, le tube choisi a une longueur de 20cm et nous fixerons la viscosité à 0.01 pour tous les tests de cette section. Les autres paramètres sont similaires à ce qui a été établi précédemment (nous conservons un pulse en entrée).
+Ici, le tube choisi a une longueur de 20cm et nous fixerons la viscosité à 10 millipoises (0.01 dans le code) pour tous les tests de cette section. Les autres paramètres sont similaires à ce qui a été établi précédemment (nous conservons un pulse en entrée).
 
 
 
@@ -83,13 +82,11 @@ pulse pour une densité de 0.01/ de 0.1
 
 On remarque ainsi que la pression baisse entre l’entrée et la sortie quand la densité est inférieure à 1. Pour vérifier si ce phénomène persiste avec une densité égale ou supérieure à l'unité, nous l'augmentons encore : 
 
+<img src="Images/TP/densité 1 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 5 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
-<img src="Images/TP/densité 1 PM.png" alt="Arterial Tree" style="width:70%; border:0;">
-</p>
-
-<p align="center">
-pulse pour une densité de 1
+pulse pour une densité de 1/ de 5
 </p>
 
 
@@ -101,35 +98,25 @@ Au delà de l'unité, il n'y a plus de distinction notable entre l'entrée et la
 Par la suite, nous testons des valeurs encore supérieures pour la densité du fluide, afin de suivre l'évolution qualitative de l'aspect des courbes lors de l'augmentation de ce paramètre : 
 
 
-<img src="Images/TP/densité 5 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/densité 10 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/densité 10 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 25 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
-pulse pour une densité de 5/ de 10
+pulse pour une densité de 10/ de 25
 </p>
 
 &nbsp;
 
 
-<img src="Images/TP/densité 25 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/densité 50 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/densité 50 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 100 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
-pulse pour une densité de 25/ de 50
+pulse pour une densité de 50/ de 100
 </p>
 
 &nbsp;
 
-
-
-<img src="Images/TP/densité 100 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/densité 250 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
-
-<p align="center">
-pulse pour une densité de 100/ de 250
-</p>
-
-&nbsp;
 
 
 <img src="Images/TP/densité 500 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
@@ -144,6 +131,13 @@ Augmenter la densité décale les courbes de sorties par rapport à celles d’e
 
 
 On peut par ailleurs déduire la vitesse des ondes en mesurant la différence de temps entre les 2 sommets des courbes. 
+
+<p align="center">
+<img src="Images/TP/entreesortie.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+
+
 Puisque nous connaissons la longueur L du tube, ainsi que la vitesse, nous pouvons obtenir t de la manière suivante :
  
 
@@ -167,7 +161,7 @@ Les résultats présentés ici seront basés sur les paramètres suivants :
 - Viscosité du fluide : ``35`` millipoises [mP]
 
 Ces données réfèrent à du sang passant dans une carotide.
-On travaille ici sur un fluide supposé newtonien, la viscosité sera donc supposée constante. De même, on suppose ici la section A<sub>0</sub> constante.
+On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée constante. De même, on suppose ici la section A<sub>0</sub> constante.
 
 En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, il vient :
 
@@ -294,9 +288,11 @@ Ici, le débit en sortie diminue drastiquement à cause de la condition imposée
 
 
 
-
-
 Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en grande partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 0D. 
 Il sera donc présenté par la suite une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
+
+
+
+## Modélisation linéaire du tube <a id="Lin"></a>
 
 
