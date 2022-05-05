@@ -257,7 +257,9 @@ Nous sommes partis de base sur un CFL valant 3 fois la vitesse de l'onde produit
 <p align="center">
 <img src="Images/TP/touslespointspression25.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
-
+<p align="center">
+Evolution de la pression - CFL de 2.5
+</p>
 
 
 Il apparaît en effet bien, cette fois-ci, que le pic diminue jusqu'à ce que l'on arrive aux trois quarts du tube. Le niveau du pic repart cependant encore à la hausse après ce passage. 
@@ -269,6 +271,10 @@ Nous essayons donc encore de réduire cette condition CFL, cette fois ci à 2.2 
 <p align="center">
 <img src="Images/TP/touslespointspression22.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
+<p align="center">
+Evolution de la pression - CFL de 2.2
+</p>
+
 
 Nous obtenons enfin des résultats cohérents avec ce que nous aurions pu imaginer jusqu'à la fin du tube. 
 Il est donc à présent plus envisageable de reconsidérer que les pertes de charge soient bien à l'origine des différences tout au long du tube.
@@ -287,6 +293,9 @@ Ce même affichage peut être mis en place pour la mesure des débits en fonctio
 
 <p align="center">
 <img src="Images/TP/entreesortiedebit22.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+<p align="center">
+Evolution du débit - CFL de 2.2
 </p>
 
 Ici, le débit en sortie diminue drastiquement à cause de la condition imposée en sortie mais les pics de débit diminuent à priori de la même manière que pour la pression et à cause des mêmes pertes de charge au long du tube.
