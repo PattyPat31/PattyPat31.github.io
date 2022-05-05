@@ -24,7 +24,17 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 ## Présentation du programme initial <a id="Presentation"></a>
 
 Pour tous nos tests, nous avons eu recours à un programme simulant les évolutions de différents paramètres dans un tube soumis au passage d'un fluide.
+Ce programme fonctionne initialement avec des valeurs par défaut, relatives aux caractéristiques du sang passant dans une carotide : 
 
+- Elastance du tube E<sub>L</sub> : ``1367000`` dyn/cm<sup>2</sup>
+- Section du tube : ``0.1361`` cm<sup>2</sup>
+- Densité du fluide : ``1.06`` kg/m<sup>3</sup>
+- Viscosité du fluide : ``35`` millipoises [mP]
+
+
+
+
+En imposant une condition particulière en entrée du tube sur le débit ou sur la pression, afin de reproduire une perturbation proche de celle d'un vaisseau ou même  sinusoïdale en entrée, puis avec des conditions en fin de tube permettant ou non de provoquer une réflexion de la perturbation, il a été possible d'obtenir différents cas de figure à traiter.
 
 
 
@@ -114,7 +124,6 @@ pulse pour une densité de 50/ de 100
 &nbsp;
 
 
-
 <img src="Images/TP/densité 500 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
 <img src="Images/TP/densité 1000 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
@@ -143,7 +152,14 @@ Puisque nous connaissons la longueur L du tube, ainsi que le temps mis pour le t
 <img src="https://render.githubusercontent.com/render/math?math=v=\frac{L}{\Delta t}">
 </p>
 
-De fait, pour ce test ci, le pulse va a une vitesse de : <img src="https://render.githubusercontent.com/render/math?math=v=\frac{0.2}{0.15}\approx1.33m/s^{-1}">
+De fait, pour ce test ci, le pulse va a une vitesse de :
+
+<img src="https://render.githubusercontent.com/render/math?math=v=\frac{0.2}{0.15}\approx1.33m/s^{-1}">
+
+
+En réitérant l'essai par exemple pour une densité de 100, nous obtenons une différence de temps de 0.21s, et donc une vitesse proche de 0.95m/s. Cela prouve bien la diminution de la vitesse lors de l'augmentation de la densité du fluide circulant dans le tube.
+
+
 
 
 
@@ -158,7 +174,6 @@ Les résultats présentés ici seront basés sur les paramètres suivants :
 - Densité du fluide : ``1.06`` kg/m<sup>3</sup>
 - Viscosité du fluide : ``35`` millipoises [mP]
 
-Ces données réfèrent à du sang passant dans une carotide.
 On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée constante. De même, on suppose ici la section A<sub>0</sub> constante.
 
 En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, il vient :
