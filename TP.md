@@ -10,6 +10,8 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 
 
 
+&nbsp;
+
 
 
 | **Sommaire**   | 
@@ -18,6 +20,8 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 | [Nouvelle condition d'entrée - pulse](#2)|
 | [Variations de la densité du sang passant dans le tube ](#3)|
 | [Prise de pression et de débit à différents endroits dans le tube](#Diff)|
+| [Essai de nouvelles conditions de sortie](#Sortie)|
+
 
 
 
@@ -59,10 +63,9 @@ Les résultats relatifs aux essais avec cette nouvelle condition d'entrée seron
 
 ## Variations de la densité du sang passant dans le tube <a id="3"></a>
 
-
 Nous avons choisi de tester le comportement de ce modèle 1D en mettant en évidence l'impact de la densité du sang qui le traverse sur l'évolution de la pression et du débit, en entrée et en sortie du tube.
 
-Ici, le tube choisi a une longueur de 20cm, les paramètres sont similaires à ce qui a été établi précédemment (nous conservons un pulse en entrée).
+Ici, le tube choisi a une longueur de 20cm et nous fixerons la viscosité à 0.01 pour tous les tests de cette section. Les autres paramètres sont similaires à ce qui a été établi précédemment (nous conservons un pulse en entrée).
 
 
 
@@ -92,6 +95,10 @@ pulse pour une densité de 1
 
 Au delà de l'unité, il n'y a plus de distinction notable entre l'entrée et la sortie du tube.
 
+&nbsp;
+
+
+Par la suite, nous testons des valeurs encore supérieures pour la densité du fluide, afin de suivre l'évolution qualitative de l'aspect des courbes lors de l'augmentation de ce paramètre : 
 
 
 <img src="Images/TP/densité 5 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
@@ -101,12 +108,18 @@ Au delà de l'unité, il n'y a plus de distinction notable entre l'entrée et la
 pulse pour une densité de 5/ de 10
 </p>
 
+&nbsp;
+
+
 <img src="Images/TP/densité 25 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
 <img src="Images/TP/densité 50 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
 pulse pour une densité de 25/ de 50
 </p>
+
+&nbsp;
+
 
 
 <img src="Images/TP/densité 100 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
@@ -115,6 +128,9 @@ pulse pour une densité de 25/ de 50
 <p align="center">
 pulse pour une densité de 100/ de 250
 </p>
+
+&nbsp;
+
 
 <img src="Images/TP/densité 500 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
 <img src="Images/TP/densité 1000 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
@@ -128,12 +144,12 @@ Augmenter la densité décale les courbes de sorties par rapport à celles d’e
 
 
 On peut par ailleurs déduire la vitesse des ondes en mesurant la différence de temps entre les 2 sommets des courbes. 
-Puisque nous connaissons la longueur L du tube, ainsi que la vitesse, nous pouvons obtenir t :
+Puisque nous connaissons la longueur L du tube, ainsi que la vitesse, nous pouvons obtenir t de la manière suivante :
+ 
 
-on calcule le t = d/v. 
-
-
-
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=t = \frac{L}{v}">
+</p>
 
 
 
@@ -267,7 +283,7 @@ Ici, le débit en sortie diminue drastiquement à cause de la condition imposée
 
 
 
-## Essai de nouvelles conditions de sortie :
+## Essai de nouvelles conditions de sortie :  <a id="Sortie"></a>
 
 
 
