@@ -268,6 +268,14 @@ Ici, le débit en sortie diminue drastiquement à cause de la condition imposée
 
 
 ## Essai de nouvelles conditions de sortie :
+**Cas d'une artère bouchée :**
+
+Dans ce cas-ci on a mis en place un pulse à l'entrée de l'artère et on impose un débit nul en sortie afin de simuler une artère bouchée. 
+On obtient l'évolution du débit à l'entrée suivant :
+<p align="center">
+<img src="Images/TP/debit_illustre.png" alt="Débit" style="width:75%; border:0;">
+</p>
+On voit clairement l'onde qui revient, en débit négatif, puis qui repart après un rebond, ce sont les réflexions de l'onde. Les pics du débits décroissent en fonction du temps, cela est dû à la viscosité. On peut essayer de l'estimer en modélisant sur matlab la pente.
 
 
 
