@@ -25,7 +25,7 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 
 Pour tous nos tests, nous avons eu recours à un programme simulant les évolutions de différents paramètres dans un tube soumis au passage d'un fluide.
 
-Ce programme fonctionne initialement avec des valeurs par défaut, relatives aux caractéristiques du sang passant dans une carotide : 
+Ce programme fonctionne initialement avec des valeurs par défaut, relatives aux caractéristiques du sang (supposé newtonien) passant dans une carotide : 
 
 - Elastance du tube E<sub>L</sub> : ``1367000`` dyn/cm<sup>2</sup>
 - Section du tube : ``0.1361`` cm<sup>2</sup>
@@ -140,12 +140,13 @@ Augmenter la densité décale les courbes en sortie du tube par rapport à celle
 &nbsp;
 
 
-On peut par ailleurs déduire graphiquement la vitesse des ondes qui se propagent en mesurant la différence de temps entre les 2 sommets des courbes : 
+On peut par ailleurs déduire graphiquement la vitesse des ondes qui se propagent en mesurant la différence de temps entre les 2 maxima des courbes : 
 
 <p align="center">
 <img src="Images/TP/vitss PM.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
+(vu que le pulse met le même temps pour arriver à la sortie dans les deux cas ci-dessus, on mesure indifféremment sur l'évolution de la pression ou du débit)
 
 Dans le cas exposé ci-contre, nous avons une densité de 50. Ici, il y a une différence de 0.175-0.025 = 0.150s entre le pulse en entrée et celui en sortie. 
 
@@ -157,7 +158,7 @@ Puisque nous connaissons la longueur L du tube, ainsi que le temps mis pour le t
 
 De fait, pour ce test ci, le pulse va a une vitesse de :
 
-<img src="https://render.githubusercontent.com/render/math?math=v=\frac{0.2}{0.15}\approx1.33m/s^{-1}">
+<img src="https://render.githubusercontent.com/render/math?math=v=\frac{0.2}{0.15}\approx1.33m.s^{-1}">
 
 
 En réitérant l'essai par exemple pour une densité de 100, nous obtenons une différence de temps de 0.21s, et donc une vitesse proche de 0.95m/s. Cela prouve bien la diminution de la vitesse lors de l'augmentation de la densité du fluide circulant dans le tube.
