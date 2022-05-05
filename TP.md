@@ -127,25 +127,27 @@ pulse pour une densité de 500/ de 1000
 </p>
 
 
-Augmenter la densité décale les courbes de sorties par rapport à celles d’entrée. On en déduit que la vitesse de propagation augmente, car celles-ci mettent plus de temps à atteindre la fin du tube. 
+Augmenter la densité décale les courbes en sortie du tube par rapport à celles d'entrée. Ainsi, le pulse imposé en entrée met plus de temps à se propager vers la fin du tube lorsque la densité du fluide est élevée. Autrement dit, la vitesse de propagation de la perturbation diminue puisqu'elle met plus de temps à atteindre l'autre extrémité du tube.
+
+&nbsp;
 
 
-On peut par ailleurs déduire la vitesse des ondes en mesurant la différence de temps entre les 2 sommets des courbes. 
+On peut par ailleurs déduire graphiquement la vitesse des ondes qui se propagent en mesurant la différence de temps entre les 2 sommets des courbes : 
 
 <p align="center">
-<img src="Images/TP/entreesortie.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/vitss PM.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
 
+Dans le cas exposé ci-contre, nous avons une densité de 50. Ici, il y a une différence de 0.175-0.025 = 0.150s entre le pulse en entrée et celui en sortie. 
 
-Puisque nous connaissons la longueur L du tube, ainsi que la vitesse, nous pouvons obtenir t de la manière suivante :
- 
+Puisque nous connaissons la longueur L du tube, ainsi que le temps mis pour le traverser, nous pouvons obtenir la vitesse de la manière suivante :
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=t = \frac{L}{v}">
+<img src="https://render.githubusercontent.com/render/math?math=v=\frac{L}{\Delta t}">
 </p>
 
-
+De fait, pour ce test ci, le pulse va a une vitesse de : <img src="https://render.githubusercontent.com/render/math?math=v=\frac{0.2}{0.15}\approx1.33m/s^{-1}">
 
 
 
@@ -266,12 +268,11 @@ Le meilleur résultat que nous pourrons donc obtenir est celui présenté ci-des
 
 
 
-D'autre part, ce même affichage peut être mis en place pour la mesure des débits en fonction du temps :
+Ce même affichage peut être mis en place pour la mesure des débits en fonction du temps :
 
 <p align="center">
 <img src="Images/TP/entreesortiedebit22.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
-
 
 Ici, le débit en sortie diminue drastiquement à cause de la condition imposée en sortie mais les pics de débit diminuent à priori de la même manière que pour la pression et à cause des mêmes pertes de charge au long du tube.
 
