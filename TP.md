@@ -16,7 +16,9 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 
 
 
-
+<p align="center">
+<img src="Images/TP/densite 1 PM.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
 
 
 
