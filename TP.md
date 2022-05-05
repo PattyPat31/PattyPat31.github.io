@@ -278,9 +278,7 @@ On obtient l'évolution du débit à l'entrée suivant :
 On voit clairement l'onde qui revient, en débit négatif, puis qui repart après un rebond, ce sont les réflexions de l'onde. Les pics du débits décroissent en fonction du temps, cela est dû à la viscosité. On peut essayer de l'estimer en modélisant sur matlab la pente.
 
 
-
-
-**Cas linéaire :**
+## Cas linéaire :
 
 Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en grande partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 0D. 
 Il sera donc présenté par la suite une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
