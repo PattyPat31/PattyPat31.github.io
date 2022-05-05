@@ -5,24 +5,38 @@
 
 La première partie de notre travail dans ce cours s'est basée sur une simulation numérique 1D (considérant que le temps et la position longitudinale dans le tube comme variables), qui permet de modéliser la manière dont le sang s’écoule dans un vaisseau sanguin. 
 
-C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance ou viscosité que nous avons pu mettre au point les résultats de la partie qui suit.
-
-
-## Présentation du programme initial
+C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance ou viscosité que nous avons pu mettre au point les résultats de cette page.
 
 
 
 
 
 
+| **Sommaire**   | 
+|:---------------| 
+| [Présentation du programme initial](#Presentation)|
+| [Nouvelle condition d'entrée - pulse](#2)|
+| [Variations de la densité du sang passant dans le tube ](#3)|
+| [Prise de pression et de débit à différents endroits dans le tube](#Diff)|
 
 
-## Nouvelle condition d'entrée - pulse
+
+
+## Présentation du programme initial <a id="Presentation"></a>
+
+
+
+
+
+
+
+
+## Nouvelle condition d'entrée - pulse <a id="2"></a>
 
 Comme le coeur envoie du sang dans les artères de manière pulsée, il fut rapidement envisagé de reproduire une pulsation à l'entrée du vaisseau que l'on souhaite modéliser.
 
 Nous souhaitons donc reproduire une surpression à l'entrée du tube.
-Pour modéliser cela, nous avons changé les paramètres de pression en entrée pour y faire intervenir une sinusoïde (pour obtenir des résultats plus lisibles).
+Pour représenter cela, nous avons changé les paramètres de pression en entrée pour y faire intervenir une sinusoïde (pour obtenir des résultats plus lisibles).
 
 La pression aurait donc la forme suivante en entrée :
 
@@ -43,7 +57,7 @@ Les résultats relatifs aux essais avec cette nouvelle condition d'entrée seron
 
 
 
-## Variations de la densité du sang passant dans le tube
+## Variations de la densité du sang passant dans le tube <a id="3"></a>
 
 
 Nous avons choisi de tester le comportement de ce modèle 1D en mettant en évidence l'impact de la densité du sang qui le traverse sur l'évolution de la pression et du débit, en entrée et en sortie du tube.
@@ -51,6 +65,8 @@ Nous avons choisi de tester le comportement de ce modèle 1D en mettant en évid
 Ici, le tube choisi a une longueur de 20cm, les paramètres sont similaires à ce qui a été établi précédemment (nous conservons un pulse en entrée).
 
 
+
+En considérant que le fluide traversant le tube possède une densité de 0.01, puis une densité de 0.1, la pression et le débit - en entrée et en sortie du tube - sont de la forme suivante : 
 
 
 <img src="Images/TP/densité 0.01 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
@@ -62,7 +78,7 @@ pulse pour une densité de 0.01/ de 0.1
 
 
 
-On remarque aussi que la pression baisse entre l’entrée et la sortie quand la densité est inférieur à 1.
+On remarque ainsi que la pression baisse entre l’entrée et la sortie quand la densité est inférieure à 1. Pour vérifier si ce phénomène persiste avec une densité égale ou supérieure à l'unité, nous l'augmentons encore : 
 
 
 <p align="center">
@@ -73,6 +89,8 @@ On remarque aussi que la pression baisse entre l’entrée et la sortie quand la
 pulse pour une densité de 1
 </p>
 
+
+Au delà de l'unité, il n'y a plus de distinction notable entre l'entrée et la sortie du tube.
 
 
 
@@ -107,7 +125,12 @@ pulse pour une densité de 500/ de 1000
 
 
 Augmenter la densité décale les courbes de sorties par rapport à celles d’entrée. On en déduit que la vitesse de propagation augmente, car celles-ci mettent plus de temps à atteindre la fin du tube. 
-On peut déduire la vitesse des ondes en mesurant la différences de temps entre les 2 sommets des courbes. En connaissant la longueur du tube (20cm) ; on calcule le t = d/v. 
+
+
+On peut par ailleurs déduire la vitesse des ondes en mesurant la différence de temps entre les 2 sommets des courbes. 
+Puisque nous connaissons la longueur L du tube, ainsi que la vitesse, nous pouvons obtenir t :
+
+on calcule le t = d/v. 
 
 
 
@@ -116,7 +139,7 @@ On peut déduire la vitesse des ondes en mesurant la différences de temps entre
 
 
 
-## Prise de pression et de débit à différents endroits dans le tube
+## Prise de pression et de débit à différents endroits dans le tube  <a id="Diff"></a>
 
 
 Les résultats présentés ici seront basés sur les paramètres suivants :
