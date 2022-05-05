@@ -8,6 +8,21 @@ La première partie de notre travail dans ce cours s'est basée sur une simulati
 C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance ou viscosité que nous avons pu mettre au point les résultats de la partie qui suit.
 
 
+## Présentation du programme initial
+
+
+
+## Variations de la densité du sang passant dans le tube
+
+
+
+
+
+
+
+
+
+
 ## Résultats : Nouvelle condition d'entrée - pulse
 
 Comme le coeur envoie du sang dans les artères de manière pulsée, il fut rapidement envisagé de reproduire une pulsation à l'entrée du vaisseau que l'on souhaite modéliser.
