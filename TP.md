@@ -24,6 +24,7 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 ## Présentation du programme initial <a id="Presentation"></a>
 
 Pour tous nos tests, nous avons eu recours à un programme simulant les évolutions de différents paramètres dans un tube soumis au passage d'un fluide.
+
 Ce programme fonctionne initialement avec des valeurs par défaut, relatives aux caractéristiques du sang passant dans une carotide : 
 
 - Elastance du tube E<sub>L</sub> : ``1367000`` dyn/cm<sup>2</sup>
@@ -31,9 +32,11 @@ Ce programme fonctionne initialement avec des valeurs par défaut, relatives aux
 - Densité du fluide : ``1.06`` kg/m<sup>3</sup>
 - Viscosité du fluide : ``35`` millipoises [mP]
 
+L'un des objectifs a donc été de modifier ces paramètres par défaut pour observer la réponse du programme et extrapoler à partir de ce modèle le fonctionnement d'un vaisseau quelconque. 
 
+&nbsp;
 
-
+Outre les paramètres, nous avons également pu modifier la manière dont entre ou sort le fluide du tube étudié.
 En imposant une condition particulière en entrée du tube sur le débit ou sur la pression, afin de reproduire une perturbation proche de celle d'un vaisseau ou même  sinusoïdale en entrée, puis avec des conditions en fin de tube permettant ou non de provoquer une réflexion de la perturbation, il a été possible d'obtenir différents cas de figure à traiter.
 
 
