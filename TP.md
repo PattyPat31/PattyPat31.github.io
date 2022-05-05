@@ -15,18 +15,56 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 ## Variations de la densité du sang passant dans le tube
 
 
+Augmenter la densité décale les courbes de sorties par rapport à celles d’entrée. On en déduit que la vitesse de propagation augmente, car celles-ci mettent plus de temps à atteindre la fin du tube. 
+On peut déduire la vitesse des ondes en mesurant la différences de temps entre les 2 sommets des courbes. En connaissant la longueur du tube (20cm) ; on calcule le t = d/v. 
+
+On remarque aussi que la pression baisse entre l’entrée et la sortie quand la densité est inférieur à 1.
+
+
+
+
+
+<img src="Images/TP/densité 0.01 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 0.1 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
-<img src="Images/TP/densité 1 PM.png" alt="Arterial Tree" style="width:70%; border:0;">
+pulse pour une densité de 0.01/ de 0.1
+</p>
+
+<img src="Images/TP/densité 1 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+
+<p align="center">
+pulse pour une densité de 1
+</p>
+
+<img src="Images/TP/densité 5 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 10 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une densité de 5/ de 10
+</p>
+
+<img src="Images/TP/densité 25 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 50 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une densité de 25/ de 50
 </p>
 
 
+<img src="Images/TP/densité 100 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 250 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
 <p align="center">
-<img src="Images/TP/densité 1000 PM.png" alt="Arterial Tree" style="width:70%; border:0;">
+pulse pour une densité de 100/ de 250
 </p>
 
+<img src="Images/TP/densité 500 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 1000 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
-
+<p align="center">
+pulse pour une densité de 500/ de 1000
+</p>
 
 ## Résultats : Nouvelle condition d'entrée - pulse
 
