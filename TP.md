@@ -272,12 +272,12 @@ On voit clairement l'onde qui revient, en débit négatif, puis qui repart aprè
 
 
 
-## Pression et débit nuls en entrée  <a id="Nul"></a>
+### Pression et débit nuls en entrée  <a id="Nul"></a>
 
 
 Dans cette section, nous envisageons de considérer que la pression et le débit à l'entrée du tube sont nuls. Ainsi, nous ne devrions qu'avoir à prendre en compte la perturbation provoquée par le pulse que nous imposerons en entrée. On testera également le fait d'annuler la pression en sortie.
 
-### Condition non-réflexive
+#### Condition non-réflexive
 
 Les résultats présentés ici seront basés sur les paramètres suivants :
 
@@ -341,7 +341,7 @@ La condition de sortie ne peut toujours pas être parfaitement respectée si l'o
 
 
 
-### Condition réflexive
+#### Condition réflexive
 
 Cette fois, nous tentons d'annuler la pression en entrée et en sortie, ainsi que le débit en entrée tout en prenant une condition à priori réflexive :
 
@@ -402,7 +402,7 @@ Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le
 
 
 <p align="center">
-<img src="Images/TP/entreemilieusortie.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/entreesortiemilpress.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
 (nous reprenons les conditions standard, avec un pulse en entrée et une condition de Windkessel simple en sortie)
