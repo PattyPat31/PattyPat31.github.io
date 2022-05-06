@@ -15,7 +15,9 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 |:---------------| 
 | [Présentation du programme initial](#Presentation)|
 | [Nouvelle condition d'entrée - pulse](#2)|
+| [Variations de la viscosité du sang passant dans le tube ](#4)|
 | [Variations de la densité du sang passant dans le tube ](#3)|
+| [Pression et débits nuls en entrée](#Nul)|
 | [Prise de pression et de débit à différents endroits dans le tube](#Diff)|
 | [Essai de nouvelles conditions de sortie](#Sortie)|
 | [ Modélisation linéaire du tube](#Lin)|
@@ -37,7 +39,36 @@ L'un des objectifs a donc été de modifier ces paramètres par défaut pour obs
 &nbsp;
 
 Outre les paramètres, nous avons également pu modifier la manière dont entre ou sort le fluide du tube étudié.
-En imposant une condition particulière en entrée du tube sur le débit ou sur la pression, afin de reproduire une perturbation proche de celle d'un vaisseau ou même  sinusoïdale en entrée, puis avec des conditions en fin de tube permettant ou non de provoquer une réflexion de la perturbation, il a été possible d'obtenir différents cas de figure à traiter.
+En imposant une condition particulière en entrée du tube sur le débit ou sur la pression, afin de reproduire une perturbation proche de celle d'un vaisseau ou même  sinusoïdale en entrée, puis avec des conditions en fin de tube permettant notamment de provoquer ou non une réflexion de la perturbation, il a été possible d'obtenir différents cas de figure à traiter.
+
+
+
+
+### Conditions de sortie du tube
+
+
+
+Initialement, nous avons 4 types de conditions différentes imposées à la sortie du tube. On peut choisir d'imposer par exemple la pression ou le débit en sortie du tube, mais  
+
+Efft W : 
+
+est le nom donné au phénomène physiologique permettant au niveau du réseau artériel de transformer le débit discontinu pulsé du sang en débit continu.
+
+
+
+
+
+
+
+Les premières théories, modélisant le débit sanguin dans le système artériel, considèrent les parois de l’aorte et des grosses artères élastiques, comme une "capacité"
+apte à stocker transitoirement une certaine quantité sanguine. En effet, leur paroi se distend durant la phase d’éjection sous l’effet de la forte pression systolique et de ce fait, une partie du volume éjecté est emmagasinée dans la lumière ainsi élargie du vaisseau. Après fermeture de la valve aortique, la paroi se rétracte restituant de l’énergie qui va permettre au flux sanguin de progresser même durant la diastole
+
+
+
+
+
+
+
 
 
 
@@ -66,12 +97,70 @@ Si nous traçons cette perturbation de pression en entrée en fonction du temps,
 Les résultats relatifs aux essais avec cette nouvelle condition d'entrée seront développés par la suite.
 
 
+## Variations de la viscosité du sang passant dans le tube <a id="4"></a>
+
+Nous réutilisons le pulse introduit précédemment, et prenons une condition de sortie de type Windkessel simple (comme nous l'avons présentée en amont).
+
+
+Nous prenons les paramètres suivants :
+
+- Elastance du tube E<sub>L</sub> : ``1367000`` dyn/cm<sup>2</sup>
+- Section du tube : ``0.1361`` cm<sup>2</sup>
+- Longueur du tube  L : ``25`` cm
+- Densité du fluide : ``1.06`` kg/m<sup>3</sup>
+
+
+Ils resteront constants pour tous les essais de cette partie.
+
+
+
+<img src="Images/TP/Nu_0.0000001.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Nu_0.001.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une viscosité de 0.0000001/ de 0.001
+</p>
+
+&nbsp;
+
+<img src="Images/TP/Nu_0.1.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Nu_0.2.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une viscosité de 0.1/ de 0.2
+</p>
+
+
+&nbsp;
+
+
+<img src="Images/TP/Nu_0.5.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Nu_1.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une viscosité de 0.5/ de 1
+</p>
+
+&nbsp;
+
+
+<p align="center">
+<img src="Images/TP/Nu_10.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+<p align="center">
+pulse pour une viscosité de 10
+</p>
+
+
+
+
 
 
 
 ## Variations de la densité du sang passant dans le tube <a id="3"></a>
 
-Nous avons choisi de tester le comportement de ce modèle 1D en mettant en évidence l'impact de la densité du sang qui le traverse sur l'évolution de la pression et du débit, en entrée et en sortie du tube.
+Ici, nous avons choisi de tester le comportement de ce modèle 1D en mettant en évidence l'impact de la densité du sang qui le traverse sur l'évolution de la pression et du débit, en entrée et en sortie du tube.
 
 Ici, le tube choisi a une longueur de 20cm et nous fixerons la viscosité à 10 millipoises (0.01 dans le code) pour tous les tests de cette section. Les autres paramètres sont similaires à ce qui a été établi précédemment (nous conservons un pulse en entrée).
 
@@ -167,7 +256,10 @@ En réitérant l'essai par exemple pour une densité de 100, nous obtenons une d
 
 
 
-## Prise de pression et de débit à différents endroits dans le tube  <a id="Diff"></a>
+## Pression et débits nuls en entrée  <a id="Nul"></a>
+
+
+Pour débuter cette section, nous envisageons en premier lieu de considérer que la pression et le débit à l'entrée du tube sont nuls. Ainsi, nous ne devrions qu'avoir à prendre en compte la perturbation provoquée par le pulse en entrée.
 
 
 Les résultats présentés ici seront basés sur les paramètres suivants :
@@ -180,14 +272,15 @@ Les résultats présentés ici seront basés sur les paramètres suivants :
 
 On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée constante. De même, on suppose ici la section A<sub>0</sub> constante.
 
+&nbsp;
+
 En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, il vient :
 
 <p align="center">
 <img src="Images/TP/entreesortie.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
-La pression en sortie est significativement supérieure au pulse imposé en entrée (plus de deux fois supérieure). Cela est dû notamment aux refléxions tout au long du tube, qui pousse une plus grande quantité à la fois à la sortie du tube et provoque une surpression.
-
+La pression en sortie est significativement supérieure à celle imposée par le pulse en entrée (plus de deux fois supérieure). Cela est dû notamment aux réflexions tout au long du tube, qui finissent par pousser une plus grande quantité à la fois à la sortie du tube, ce qui provoque à priori une surpression.
 
 
 
@@ -206,9 +299,9 @@ périphérique (résistance le long des parois du tube lors de l'écoulement du 
 <img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=R_{parois} = \frac{P_{entree} - P_{sortie}}{Q}">
 </p>
 
-Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus moindre qu'ailleurs.
+Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus faible qu'ailleurs.
 
-Le sang réfléchi dans le sens inverse de l'écoulement peut même ressortir du tube par l'entrée, d'où le débit négatif observé quelques temps après le pic de débit en sortie.
+Dans cette configuration, le sang réfléchi dans le sens inverse de l'écoulement peut même ressortir du tube par l'entrée, d'où le débit négatif observé quelques temps après le pic de débit en sortie.
 
 
 
@@ -216,18 +309,27 @@ Ce phénomène peut également expliquer l'intensité du pic de pression en sort
 
 
 
+&nbsp;
+
+Pour vérifier ces observations, nous décidons de changer 
+
+
+
+
+## Prise de pression et de débit à différents endroits dans le tube  <a id="Diff"></a>
 
 
 Un des problèmes pouvant limiter notre analyse dans ce TP est dû aux endroits choisis dans le tube pour tracer l'évolution des paramètres. Si nous ne prenions que l'évolution au cours du temps de ce qu'il se passe en entrée et/ou en sortie, nous ne pourrions pas vérifier le fonctionnement intermédiaire du programme.
 
+
 Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le long du tube, nous prenons des mesures également au milieu de celui-ci.
-
-
 
 
 <p align="center">
 <img src="Images/TP/entreemilieusortie.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
+
+(nous reprenons la même configuration que la partie précédemment traitée)
 
 Le même phénomène de reflux est perceptible au milieu du tube, même s'il est moins prononcé qu'en sortie.
 
