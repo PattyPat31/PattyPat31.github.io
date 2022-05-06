@@ -5,25 +5,33 @@
 
 La première partie de notre travail dans ce cours s'est basée sur une simulation numérique 1D (ne considérant que la position longitudinale dans le tube et le temps comme variables), qui permet de modéliser la manière dont le sang s’écoule dans un vaisseau sanguin. 
 
-C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres de pression, élastance et viscosité que nous avons pu mettre au point les résultats de cette page.
+C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'entrée, de sortie et en testant différents paramètres que nous avons pu mettre au point les résultats de cette page.
 
 
 &nbsp;
 
 
-| **Sommaire**   | 
-|:---------------| 
-| [Présentation du programme initial](#Presentation)|
-| [Nouvelle condition d'entrée - pulse](#2)|
-| [Variations de la viscosité du sang passant dans le tube ](#4)|
-| [Variations de la densité du sang passant dans le tube ](#3)|
-| [Essai de nouvelles conditions de sortie](#Sortie)|
-| [Pression et débits nuls en entrée](#Nul)|
-| [Prise de pression et de débit à différents endroits dans le tube](#Diff)|
-| [ Modélisation linéaire du tube](#Lin)|
+
+## **Sommaire**   
 
 
-## Présentation du programme initial <a id="Presentation"></a>
+* [Présentation du programme initial](#Presentation)
+* [Nouvelle condition d'entrée - pulse](#2)
+* [Variation de la densité du sang passant dans le tube ](#3)
+* [Variation de la viscosité du sang passant dans le tube ](#4)
+* [Essais de nouvelles conditions de sortie](#Sortie) 
+     * [Cas d'une artère bouchée](#Stop) 
+     * [Pression et débit nuls en entrée / Pression nulle en sortie](#Nul)
+          * [Condition non-réflexive](#parefl)
+          * [Condition réflexive](#refl)
+* [Prise de pression et de débit à différents endroits dans le tube](#Diff)
+* [Amélioration de la vitesse de relevé des résultats](#CFL)
+* [Modélisation linéaire du tube](#Lin)
+
+&nbsp;
+
+
+# Présentation du programme initial <a id="Presentation"></a>
 
 Pour tous nos tests, nous avons eu recours à un programme simulant les évolutions de différents paramètres dans un tube soumis au passage d'un fluide.
 
@@ -31,10 +39,18 @@ Ce programme fonctionne initialement avec des valeurs par défaut, relatives aux
 
 - Elastance du tube E<sub>L</sub> : ``1367000`` dyn/cm<sup>2</sup>
 - Section du tube : ``0.1361`` cm<sup>2</sup>
-- Densité du fluide : ``1.06`` kg/m<sup>3</sup>
+- Densité du fluide : ``1.06`` [ssu]
 - Viscosité du fluide : ``35`` millipoises [mP]
+- Débit d'entrée : ``3.7370`` g/s
+- Pression d'entrée : ``105.9632`` dyn/cm<sup>2</sup>
+- Pression de sortie :  ``5.8317`` dyn/cm<sup>2</sup>
+- Résistance périphérique ``34875`` dyme.s/cm 
+- Compliance périphérique ``52049`` ml/dyn/cm<sup>2</sup>
 
-L'un des objectifs a donc été de modifier ces paramètres par défaut pour observer la réponse du programme et extrapoler à partir de ce modèle le fonctionnement d'un vaisseau quelconque. 
+
+Ici, la compliance est la capacité du tube à adapter son volume lorsqu'une variation de pression se produit et la résistance périphérique réfère à la résistance le long des parois du tube lors de l'écoulement du sang.
+
+L'une des tâches a donc été de modifier ces paramètres par défaut pour observer la réponse du programme et extrapoler à partir de ce modèle le fonctionnement d'un vaisseau quelconque. 
 
 &nbsp;
 
@@ -44,37 +60,9 @@ En imposant une condition particulière en entrée du tube sur le débit ou sur 
 
 
 
-### Conditions de sortie du tube
 
 
-
-Initialement, nous avons 4 types de conditions différentes imposées à la sortie du tube. On peut choisir d'imposer par exemple la pression ou le débit en sortie du tube, mais  
-
-Efft W : 
-
-est le nom donné au phénomène physiologique permettant au niveau du réseau artériel de transformer le débit discontinu pulsé du sang en débit continu.
-
-
-
-
-
-A VIRER
-
-Les premières théories, modélisant le débit sanguin dans le système artériel, considèrent les parois de l’aorte et des grosses artères élastiques, comme une "capacité"
-apte à stocker transitoirement une certaine quantité sanguine. En effet, leur paroi se distend durant la phase d’éjection sous l’effet de la forte pression systolique et de ce fait, une partie du volume éjecté est emmagasinée dans la lumière ainsi élargie du vaisseau. Après fermeture de la valve aortique, la paroi se rétracte restituant de l’énergie qui va permettre au flux sanguin de progresser même durant la diastole
-
-
-
-
-
-
-
-
-
-
-
-
-## Nouvelle condition d'entrée - pulse <a id="2"></a>
+# Nouvelle condition d'entrée - pulse <a id="2"></a>
 
 Comme le coeur envoie du sang dans les artères de manière pulsée, il fut rapidement envisagé de reproduire une pulsation à l'entrée du vaisseau que l'on souhaite modéliser.
 
@@ -97,69 +85,13 @@ Si nous traçons cette perturbation de pression en entrée en fonction du temps,
 Les résultats relatifs aux essais avec cette nouvelle condition d'entrée seront développés par la suite.
 
 
-## Variations de la viscosité du sang passant dans le tube <a id="4"></a>
-
-Nous réutilisons le pulse introduit précédemment, et prenons une condition de sortie de type Windkessel simple (comme nous l'avons présentée en amont).
-
-
-Nous prenons les paramètres suivants :
-
-- Elastance du tube E<sub>L</sub> : ``1367000`` dyn/cm<sup>2</sup>
-- Section du tube : ``0.1361`` cm<sup>2</sup>
-- Longueur du tube  L : ``25`` cm
-- Densité du fluide : ``1.06`` kg/m<sup>3</sup>
-
-
-Ils resteront constants pour tous les essais de cette partie.
 
 
 
-<img src="Images/TP/Nu_0.0000001.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/Nu_0.001.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
-<p align="center">
-pulse pour une viscosité de 0.0000001/ de 0.001
-</p>
+# Variation de la densité du sang passant dans le tube <a id="3"></a>
 
-&nbsp;
-
-<img src="Images/TP/Nu_0.1.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/Nu_0.2.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
-
-<p align="center">
-pulse pour une viscosité de 0.1/ de 0.2
-</p>
-
-
-&nbsp;
-
-
-<img src="Images/TP/Nu_0.5.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/Nu_1.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
-
-<p align="center">
-pulse pour une viscosité de 0.5/ de 1
-</p>
-
-&nbsp;
-
-
-<p align="center">
-<img src="Images/TP/Nu_10.png" alt="Arterial Tree" style="width:70%; border:0;">
-</p>
-
-<p align="center">
-pulse pour une viscosité de 10
-</p>
-
-
-A FINIR
-
-
-
-## Variations de la densité du sang passant dans le tube <a id="3"></a>
-
-Ici, nous avons choisi de tester le comportement de ce modèle 1D en mettant en évidence l'impact de la densité du sang qui le traverse sur l'évolution de la pression et du débit, en entrée et en sortie du tube.
+Ici, nous avons choisi de tester le comportement de notre modèle en mettant en évidence l'impact de la densité du sang qui le traverse sur l'évolution de la pression et du débit, en entrée et en sortie du tube.
 
 Ici, le tube choisi a une longueur de 20cm et nous fixerons la viscosité à 10 millipoises (0.01 dans le code) pour tous les tests de cette section. Les autres paramètres sont similaires à ce qui a été établi précédemment (nous conservons un pulse en entrée).
 
@@ -256,10 +188,86 @@ En réitérant l'essai par exemple pour une densité de 100, nous obtenons une d
 
 
 
-## Essai de nouvelles conditions de sortie :  <a id="Sortie"></a>
 
 
-### Cas d'une artère bouchée :
+
+
+# Variation de la viscosité du sang passant dans le tube <a id="4"></a>
+
+
+
+Dans cette partie, nous cherchons l'influence de la viscosité du sang sur l'évolution de la pression et du débit, en entrée et en sortie du tube.
+Nous réutilisons le pulse introduit précédemment, ainsi que tous les paramètres initiaux (hormis la viscosité).
+
+
+
+Pour un fluide ayant une viscosité très faible, par exemple de l'ordre de 1 à 1.10<sup>-4</sup> mP (0.001 et 0.0000001 dans le code), la pression et le débit - en entrée et en sortie du tube - sont de la forme suivante : 
+
+
+
+
+<img src="Images/TP/Nu_0.0000001.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Nu_0.001.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une viscosité de  1.10<sup>-4</sup> / 1 mP
+</p>
+
+&nbsp;
+
+<img src="Images/TP/Nu_0.1.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Nu_0.2.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une viscosité de 0.1/ de 0.2
+</p>
+
+
+&nbsp;
+
+
+<img src="Images/TP/Nu_0.5.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Nu_1.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une viscosité de 0.5/ de 1
+</p>
+
+&nbsp;
+
+
+<p align="center">
+<img src="Images/TP/Nu_10.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+<p align="center">
+pulse pour une viscosité de 10
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Essais de nouvelles conditions de sortie :  <a id="Sortie"></a>
+
+
+## Cas d'une artère bouchée : <a id="Stop"></a>
 
 Dans ce cas-ci on a mis en place un pulse à l'entrée de l'artère et on impose un débit nul en sortie afin de simuler une artère bouchée. 
 On obtient l'évolution du débit à l'entrée suivant :
@@ -272,12 +280,12 @@ On voit clairement l'onde qui revient, en débit négatif, puis qui repart aprè
 
 
 
-### Pression et débit nuls en entrée  <a id="Nul"></a>
+## Pression et débit nuls en entrée / pression nulle en sortie  <a id="Nul"></a>
 
 
 Dans cette section, nous envisageons de considérer que la pression et le débit à l'entrée du tube sont nuls. Ainsi, nous ne devrions qu'avoir à prendre en compte la perturbation provoquée par le pulse que nous imposerons en entrée. On testera également le fait d'annuler la pression en sortie.
 
-#### Condition non-réflexive
+### Condition non-réflexive <a id="parefl"></a>
 
 Les résultats présentés ici seront basés sur les paramètres suivants :
 
@@ -341,7 +349,7 @@ La condition de sortie ne peut toujours pas être parfaitement respectée si l'o
 
 
 
-#### Condition réflexive
+### Condition réflexive <a id="refl"></a>
 
 Cette fois, nous tentons d'annuler la pression en entrée et en sortie, ainsi que le débit en entrée tout en prenant une condition à priori réflexive :
 
@@ -368,7 +376,7 @@ Pour l'évolution de la pression comme celle du débit, nous obtenons avec les p
 
 Dans les conditions standard, le débit en sortie est quasiment nul tandis que celui en entrée atteste à priori de multiples réflexions.
 
-Ces observations viennent naturellement de la condition de sortie imposée dans notre programme. En effet, nous considérons ici une condition de type Windkessel en sortie du tube. La résistance périphérique (résistance le long des parois du tube lors de l'écoulement du sang) y est définie par : 
+Ces observations viennent naturellement de la condition de sortie imposée dans notre programme. En effet, nous considérons ici une condition de type Windkessel en sortie du tube. La résistance périphérique y est définie par : 
 
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=R_{parois} = \frac{P_{entree} - P_{sortie}}{Q}">
@@ -384,7 +392,7 @@ Mais à présent, nous pouvons à priori trouver une explication pour l'intensit
 
 &nbsp;
 
-Au final, nous pourrions affirmer que l'annulation des pressions (plus encore que l'annulation du débit en entrée) a un plus grand impact sur l'évolution du pulse dans le tube que les conditions imposées en sortie. Dans les deux cas testés, nous obtenons des résultats se situant dans une sorte d'entre-deux, une partie de l'onde se réflechit et le reste traverse effectivement le tube, et ce presque indépendamment de ce que l'on tente d'imposer aux extrémités.
+Au final, nous pourrions affirmer que l'annulation des pressions (plus encore que l'annulation du débit en entrée) a un plus grand impact sur l'évolution du pulse dans le tube que les conditions imposées en sortie. Dans les deux cas testés, nous obtenons des résultats se situant dans une sorte d'entre-deux, une partie de l'onde se réflechit et le reste traverse effectivement le tube, et ce indépendamment de ce que l'on tente d'imposer aux extrémités.
 
 
 
@@ -393,7 +401,7 @@ Au final, nous pourrions affirmer que l'annulation des pressions (plus encore qu
 
 
 
-## Prise de pression et de débit à différents endroits dans le tube  <a id="Diff"></a>
+# Prise de pression et de débit à différents endroits dans le tube  <a id="Diff"></a>
 
 
 Un des problèmes pouvant limiter notre analyse dans ce TP est dû aux endroits choisis dans le tube pour tracer l'évolution des paramètres. Si nous ne prenions que l'évolution au cours du temps de ce qu'il se passe en entrée et/ou en sortie, nous ne pourrions pas vérifier le fonctionnement intermédiaire du programme.
@@ -412,6 +420,8 @@ Le même phénomène de reflux est perceptible au milieu du tube, même s'il est
 Autrement, on peut déjà voir ici que la pression n'a plus la même allure au milieu du tube, le pic y étant plus faible qu'en entrée. 
 La résistance périphérique n'étant pas nulle pour notre essai, il se peut que des pertes de charge tout au long du tube soient à l'origine de cette modification.
 
+&nbsp;
+
 Pour vérifier cela, on peut augmenter encore le nombre de points de mesure :
 
 
@@ -423,8 +433,10 @@ Pour vérifier cela, on peut augmenter encore le nombre de points de mesure :
 En réalité, les pics de pression relevés tout au long du tube semblent décroître, en partant de la sortie du tube et jusqu'au quart de celui-ci.
 L'hypothèse des pertes de charge ne permet donc pas à priori d'expliquer une telle évolution de la pression dans le tube.
 
+# Amélioration de la vitesse de relevé des résultats <a id="CFL"></a>
 
-Nous avons donc pu envisager que ces résultats étaient peut-être dûs à un mauvais relevé des pressions au cours du temps. 
+Nous avons pu envisager que les résultats précédemment obtenus étaient peut-être dûs à un mauvais relevé des pressions au cours du temps. 
+
 En effet, pour relever les données de pression, il nous faut mettre en place un schéma de calcul suffisamment en avance sur l'onde à analyser pour pouvoir relever des résultats, sans pour autant être trop rapide pour ne pas omettre des informations pouvant être trop éloignées temporellement de ce que l'on souhaite obtenir.
 Cette condition de 'vitesse de relevé' à respecter, la condition CFL, pourrait être à l'origine de nos résultats inexplicables.
 
@@ -482,7 +494,7 @@ Evolution du débit - CFL de 2.2
 Ici, le débit en sortie diminue drastiquement à cause de la condition imposée en sortie mais les pics de débit diminuent à priori de la même manière que pour la pression et à cause des mêmes pertes de charge au long du tube.
 
 
-## Cas linéaire :  <a id="Lin"></a>
+# Cas linéaire :  <a id="Lin"></a>
 
 Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
 Il sera donc présenté ici une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
