@@ -58,7 +58,7 @@ est le nom donné au phénomène physiologique permettant au niveau du réseau a
 
 
 
-
+A VIRER
 
 Les premières théories, modélisant le débit sanguin dans le système artériel, considèrent les parois de l’aorte et des grosses artères élastiques, comme une "capacité"
 apte à stocker transitoirement une certaine quantité sanguine. En effet, leur paroi se distend durant la phase d’éjection sous l’effet de la forte pression systolique et de ce fait, une partie du volume éjecté est emmagasinée dans la lumière ainsi élargie du vaisseau. Après fermeture de la valve aortique, la paroi se rétracte restituant de l’énergie qui va permettre au flux sanguin de progresser même durant la diastole
@@ -153,8 +153,7 @@ pulse pour une viscosité de 10
 </p>
 
 
-
-
+A FINIR
 
 
 
@@ -259,7 +258,7 @@ En réitérant l'essai par exemple pour une densité de 100, nous obtenons une d
 ## Pression et débits nuls en entrée  <a id="Nul"></a>
 
 
-Pour débuter cette section, nous envisageons en premier lieu de considérer que la pression et le débit à l'entrée du tube sont nuls. Ainsi, nous ne devrions qu'avoir à prendre en compte la perturbation provoquée par le pulse en entrée.
+Pour débuter cette section, nous envisageons de considérer que la pression et le débit à l'entrée du tube sont nuls. Ainsi, nous ne devrions qu'avoir à prendre en compte la perturbation provoquée par le pulse en entrée.
 
 
 Les résultats présentés ici seront basés sur les paramètres suivants :
@@ -274,26 +273,38 @@ On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée
 
 &nbsp;
 
-En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, il vient :
+En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, sans modifier les pressions par défaut, il vient :
+
+<p align="center">
+<img src="Images/TP/Newentreesortiepress.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+La pression en sortie est significativement supérieure à celle imposée par le pulse en entrée (le pic est deux fois supérieur). Cela est dû notamment aux réflexions tout au long du tube, qui finissent par pousser une plus grande quantité à la fois à la sortie du tube, ce qui provoque à priori une surpression.
+
+
+En annulant cette fois les pressions et débits en entrée, ainsi que la pression en sortie, nous pouvons obtenir ce qui suit :
 
 <p align="center">
 <img src="Images/TP/entreesortie.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
-La pression en sortie est significativement supérieure à celle imposée par le pulse en entrée (plus de deux fois supérieure). Cela est dû notamment aux réflexions tout au long du tube, qui finissent par pousser une plus grande quantité à la fois à la sortie du tube, ce qui provoque à priori une surpression.
 
-
+&nbsp;
 
 Nous pouvons d'ailleurs mettre cela en parallèle avec l'évolution du débit à ces deux points de mesure : 
 
+
 <p align="center">
-<img src="Images/TP/entreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/Newentreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
+Dans les conditions standard, le débit en sortie est quasiment nul tandis que celui en entrée atteste à priori de multiples réflexions.
+
+
 Le débit en sortie du tube est bien moins important qu'en entrée, tandis qu'un important pic négatif (courbe bleue) se profile après le signal en sortie.
+
 Cela peut venir des conditions de sortie imposées dans notre programme. En effet, nous considérons une condition de type Windkessel en sortie du tube. La résistance  
 périphérique (résistance le long des parois du tube lors de l'écoulement du sang) y est définie par : 
-
 
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=R_{parois} = \frac{P_{entree} - P_{sortie}}{Q}">
@@ -301,17 +312,22 @@ périphérique (résistance le long des parois du tube lors de l'écoulement du 
 
 Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus faible qu'ailleurs.
 
-Dans cette configuration, le sang réfléchi dans le sens inverse de l'écoulement peut même ressortir du tube par l'entrée, d'où le débit négatif observé quelques temps après le pic de débit en sortie.
+Dans cette configuration, le sang réfléchi dans le sens inverse de l'écoulement peut même ressortir du tube par l'entrée, d'où le débit négatif observé peu de temps après le pic de débit en sortie.
 
 
 
-Ce phénomène peut également expliquer l'intensité du pic de pression en sortie, puisque l'on s'attend bien à avoir plus de pression dans une cette même zone, celle amenée initialement par l'onde de pulsation ainsi que celle du flux renvoyé.
-
+Cet effet peut également expliquer l'intensité du pic de pression en sortie, puisque l'on s'attend bien à avoir plus de pression dans une cette même zone, celle amenée initialement par l'onde de pulsation ainsi que celle du flux renvoyé.
 
 
 &nbsp;
 
-Pour vérifier ces observations, nous décidons de changer 
+Lorsque nous annulons les pressions et débits en entrée, nous obtenons la figure suivante :
+
+<p align="center">
+<img src="Images/TP/entreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+
 
 
 
