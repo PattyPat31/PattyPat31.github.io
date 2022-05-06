@@ -17,9 +17,9 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 | [Nouvelle condition d'entrée - pulse](#2)|
 | [Variations de la viscosité du sang passant dans le tube ](#4)|
 | [Variations de la densité du sang passant dans le tube ](#3)|
+| [Essai de nouvelles conditions de sortie](#Sortie)|
 | [Pression et débits nuls en entrée](#Nul)|
 | [Prise de pression et de débit à différents endroits dans le tube](#Diff)|
-| [Essai de nouvelles conditions de sortie](#Sortie)|
 | [ Modélisation linéaire du tube](#Lin)|
 
 
@@ -255,38 +255,58 @@ En réitérant l'essai par exemple pour une densité de 100, nous obtenons une d
 
 
 
-## Pression et débits nuls en entrée  <a id="Nul"></a>
+
+## Essai de nouvelles conditions de sortie :  <a id="Sortie"></a>
 
 
-Pour débuter cette section, nous envisageons de considérer que la pression et le débit à l'entrée du tube sont nuls. Ainsi, nous ne devrions qu'avoir à prendre en compte la perturbation provoquée par le pulse en entrée.
+### Cas d'une artère bouchée :
+
+Dans ce cas-ci on a mis en place un pulse à l'entrée de l'artère et on impose un débit nul en sortie afin de simuler une artère bouchée. 
+On obtient l'évolution du débit à l'entrée suivant :
+<p align="center">
+<img src="Images/TP/debit_illustre.png" alt="Débit" style="width:75%; border:0;">
+</p>
+On voit clairement l'onde qui revient, en débit négatif, puis qui repart après un rebond, ce sont les réflexions de l'onde. Les pics du débits décroissent en fonction du temps, cela est dû à la viscosité. On peut essayer de l'estimer en modélisant sur matlab la pente.
+
+
+
+
+
+## Pression et débit nuls en entrée  <a id="Nul"></a>
+
+
+Dans cette section, nous envisageons de considérer que la pression et le débit à l'entrée du tube sont nuls. Ainsi, nous ne devrions qu'avoir à prendre en compte la perturbation provoquée par le pulse que nous imposerons en entrée.
 
 
 Les résultats présentés ici seront basés sur les paramètres suivants :
 
 - Elastance du tube E<sub>L</sub> : ``1367000`` dyn/cm<sup>2</sup>
-- Section du tube : ``0.1361`` cm<sup>2</sup>
+- Section du tube A<sub>0</sub> : ``0.1361`` cm<sup>2</sup>
 - Longueur du tube  L : ``25`` cm
 - Densité du fluide : ``1.06`` kg/m<sup>3</sup>
 - Viscosité du fluide : ``35`` millipoises [mP]
 
-On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée constante. De même, on suppose ici la section A<sub>0</sub> constante.
+On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée constante. 
 
 &nbsp;
 
-En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, sans modifier les pressions par défaut, il vient :
+En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, sans modifier les pressions et débits par défaut, il vient :
 
 <p align="center">
 <img src="Images/TP/Newentreesortiepress.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
-La pression en sortie est significativement supérieure à celle imposée par le pulse en entrée (le pic est deux fois supérieur). Cela est dû notamment aux réflexions tout au long du tube, qui finissent par pousser une plus grande quantité à la fois à la sortie du tube, ce qui provoque à priori une surpression.
+Il s'agit ici d'un résultat très similaire à ce que nous avions pu trouver en bouchant le tube avec un débit nul en sortie. La pression en sortie est significativement supérieure à celle imposée par le pulse en entrée (le pic est deux fois supérieur). Cela est dû notamment aux réflexions tout au long du tube, qui finissent par pousser une plus grande quantité à la fois à la sortie du tube, le tout provoquant à priori une surpression.
 
+&nbsp;
 
-En annulant cette fois les pressions et débits en entrée, ainsi que la pression en sortie, nous pouvons obtenir ce qui suit :
+En annulant cette fois les pressions et débits en entrée, nous pouvons obtenir ce qui suit :
 
 <p align="center">
 <img src="Images/TP/entreesortie.png" alt="Arterial Tree" style="width:70%; border:0;">
-</p>
+t d</p>
+
+Cette fois, la pression en sortie présente un pic, qui est moins bien prononcé lors des réflexions que précédemment. Le fait d'annuler la pression en sortie ne se répercute pas immédiatement à priori sur l'évolution, mais nous constatons malgré tout que cela aide à fortement diminuer les réflexions en sortie.
 
 
 &nbsp;
@@ -298,22 +318,20 @@ Nous pouvons d'ailleurs mettre cela en parallèle avec l'évolution du débit à
 <img src="Images/TP/Newentreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
-Dans les conditions standard, le débit en sortie est quasiment nul tandis que celui en entrée atteste à priori de multiples réflexions.
+Dans les conditions standard, comme au-dessus, le débit en sortie est quasiment nul tandis que celui en entrée atteste à priori de multiples réflexions.
 
 
 Le débit en sortie du tube est bien moins important qu'en entrée, tandis qu'un important pic négatif (courbe bleue) se profile après le signal en sortie.
 
-Cela peut venir des conditions de sortie imposées dans notre programme. En effet, nous considérons une condition de type Windkessel en sortie du tube. La résistance  
-périphérique (résistance le long des parois du tube lors de l'écoulement du sang) y est définie par : 
+Ces observations viennent des conditions de sortie imposées dans notre programme. En effet, nous considérons une condition de type Windkessel en sortie du tube. La résistance périphérique (résistance le long des parois du tube lors de l'écoulement du sang) y est définie par : 
 
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=R_{parois} = \frac{P_{entree} - P_{sortie}}{Q}">
 </p>
 
-Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus faible qu'ailleurs.
+Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée y est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus faible qu'ailleurs.
 
-Dans cette configuration, le sang réfléchi dans le sens inverse de l'écoulement peut même ressortir du tube par l'entrée, d'où le débit négatif observé peu de temps après le pic de débit en sortie.
-
+Dans cette configuration, le sang réfléchi dans le sens inverse de l'écoulement peut même ressortir du tube par l'entrée, d'où le débit négatif observé peu de temps après le pic de débit en sortie. C'est ce que nous avions déjà pu observer en bouchant le tube.
 
 
 Cet effet peut également expliquer l'intensité du pic de pression en sortie, puisque l'on s'attend bien à avoir plus de pression dans une cette même zone, celle amenée initialement par l'onde de pulsation ainsi que celle du flux renvoyé.
@@ -326,6 +344,19 @@ Lorsque nous annulons les pressions et débits en entrée, nous obtenons la figu
 <p align="center">
 <img src="Images/TP/entreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
+
+De la même manière que pour la pression, le débit observé en entrée est très important mais devient rapidement moindre lorsque la première réflexion s'est produite. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -415,20 +446,6 @@ Evolution du débit - CFL de 2.2
 </p>
 
 Ici, le débit en sortie diminue drastiquement à cause de la condition imposée en sortie mais les pics de débit diminuent à priori de la même manière que pour la pression et à cause des mêmes pertes de charge au long du tube.
-
-
-
-## Essai de nouvelles conditions de sortie :  <a id="Sortie"></a>
-
-
-**Cas d'une artère bouchée :**
-
-Dans ce cas-ci on a mis en place un pulse à l'entrée de l'artère et on impose un débit nul en sortie afin de simuler une artère bouchée. 
-On obtient l'évolution du débit à l'entrée suivant :
-<p align="center">
-<img src="Images/TP/debit_illustre.png" alt="Débit" style="width:75%; border:0;">
-</p>
-On voit clairement l'onde qui revient, en débit négatif, puis qui repart après un rebond, ce sont les réflexions de l'onde. Les pics du débits décroissent en fonction du temps, cela est dû à la viscosité. On peut essayer de l'estimer en modélisant sur matlab la pente.
 
 
 ## Cas linéaire :  <a id="Lin"></a>
