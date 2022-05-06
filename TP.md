@@ -431,7 +431,7 @@ Cette condition de 'vitesse de relevé' à respecter, la condition CFL, pourrait
 Nous sommes partis de base sur un CFL valant 3 fois la vitesse de l'onde produite dans notre modèle. En prenant une condition CFL de 2.5 fois la vitesse de l'onde, nous obtenons la figure suivante : 
 
 <p align="center">
-<img src="Images/TP/touslespointspression25.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/touslespointspression255.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 <p align="center">
 Evolution de la pression - CFL de 2.5
@@ -440,35 +440,40 @@ Evolution de la pression - CFL de 2.5
 
 Il apparaît en effet bien, cette fois-ci, que le pic diminue jusqu'à ce que l'on arrive aux trois quarts du tube. Le niveau du pic repart cependant encore à la hausse après ce passage. 
 
+
+&nbsp;
+
 Nous essayons donc encore de réduire cette condition CFL, cette fois ci à 2.2 fois la vitesse de l'onde :
 
 
 
 <p align="center">
-<img src="Images/TP/touslespointspression22.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/touslespointspression225.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 <p align="center">
 Evolution de la pression - CFL de 2.2
 </p>
 
 
-Nous obtenons enfin des résultats cohérents avec ce que nous aurions pu imaginer jusqu'à la fin du tube. 
-Il est donc à présent plus envisageable de reconsidérer que les pertes de charge soient bien à l'origine des différences tout au long du tube.
-
-L'écoulement étant freiné au cours de son évolution notamment au niveau des parois et à cause de sa viscosité, il ne peut pas y avoir exactement la même quantité de sang à chaque endroit du tube à un instant t, une partie étant restée en arrière. Cela peut bien expliquer cette différence de pression dans notre tube.
-
+Nous obtenons des résultats similaires à ce que nous avions précédemment. 
 
 La condition CFL n'étant pas remplie indéfiniment, nous ne pouvons plus obtenir de résultats pour une vitesse de relevé égale ou inférieure à 2.1 fois celle de l'onde. L'onde étant déjà passée dans la zone 'traitée' par notre schéma de calcul à un instant t, nous ne pouvons plus rien en retirer.
 
 Le meilleur résultat que nous pourrons donc obtenir est celui présenté ci-dessus.
 
+Il est plus envisageable à présent de considérer que les pertes de charge soient bien à l'origine des différences tout au long du tube.
+
+L'écoulement étant freiné au cours de son évolution, notamment au niveau des parois et à cause de sa viscosité, il ne peut pas y avoir exactement la même quantité de sang à chaque endroit du tube à un instant t, une partie étant restée en arrière. Cela peut bien expliquer cette différence de pression dans notre tube.
 
 
+
+
+&nbsp;
 
 Ce même affichage peut être mis en place pour la mesure des débits en fonction du temps :
 
 <p align="center">
-<img src="Images/TP/entreesortiedebit22.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/entreesortiedebit225.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 <p align="center">
 Evolution du débit - CFL de 2.2
@@ -479,7 +484,7 @@ Ici, le débit en sortie diminue drastiquement à cause de la condition imposée
 
 ## Cas linéaire :  <a id="Lin"></a>
 
-Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en grande partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 0D. 
-Il sera donc présenté par la suite une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
+Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
+Il sera donc présenté ici une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
 
 
