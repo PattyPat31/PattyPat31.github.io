@@ -275,8 +275,9 @@ On voit clairement l'onde qui revient, en débit négatif, puis qui repart aprè
 ## Pression et débit nuls en entrée  <a id="Nul"></a>
 
 
-Dans cette section, nous envisageons de considérer que la pression et le débit à l'entrée du tube sont nuls. Ainsi, nous ne devrions qu'avoir à prendre en compte la perturbation provoquée par le pulse que nous imposerons en entrée.
+Dans cette section, nous envisageons de considérer que la pression et le débit à l'entrée du tube sont nuls. Ainsi, nous ne devrions qu'avoir à prendre en compte la perturbation provoquée par le pulse que nous imposerons en entrée. On testera également le fait d'annuler la pression en sortie.
 
+### Condition non-réflexive
 
 Les résultats présentés ici seront basés sur les paramètres suivants :
 
@@ -293,10 +294,11 @@ On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée
 En reprenant la condition d'entrée introduite précédemment et en traçant la pression à la sortie du tube, sans modifier les pressions et débits par défaut, il vient :
 
 <p align="center">
-<img src="Images/TP/Newentreesortiepress.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/Newentreesortiepressparefl.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
-Il s'agit ici d'un résultat très similaire à ce que nous avions pu trouver en bouchant le tube avec un débit nul en sortie. La pression en sortie est significativement supérieure à celle imposée par le pulse en entrée (le pic est deux fois supérieur). Cela est dû notamment aux réflexions tout au long du tube, qui finissent par pousser une plus grande quantité à la fois à la sortie du tube, le tout provoquant à priori une surpression.
+
+La pression en sortie est légèrement supérieure que celle imposée en entrée. Cela pourrait provenir du fait que, malgré la condition non-réflexive imposée, quelques réflexions se produisent tout au long du tube. Ces réflexions pourraient finir par pousser une plus grande quantité à la fois à la sortie du tube, le tout provoquant une surpression. Une autre hypothèse basée sur la vitesse de relevé des informations tout au long du tube dans notre programme sera explicitée par la suite.
 
 &nbsp;
 
@@ -306,17 +308,75 @@ En annulant cette fois les pressions et débits en entrée, nous pouvons obtenir
 <img src="Images/TP/entreesortie.png" alt="Arterial Tree" style="width:70%; border:0;">
 t d</p>
 
-Cette fois, la pression en sortie présente un pic, qui est moins bien prononcé lors des réflexions que précédemment. Le fait d'annuler la pression en sortie ne se répercute pas immédiatement à priori sur l'évolution, mais nous constatons malgré tout que cela aide à fortement diminuer les réflexions en sortie.
+Cette fois, la pression en sortie est significativement supérieure à celle imposée par le pulse en entrée (le pic est deux fois supérieur). Ici, la première hypothèse fournie est plus crédible, puisque le pulse se réfléchit nettement plusieurs fois - bien plus que dans au cas où nous avions des pressions non-nulles aux extrémités - malgré la non-relféxivité imposée. La surpression s'explique donc d'autant mieux que l'on peut observer les réflexions partielles.
+
+Cependant, l'annulation des paramètres cités inhibe l'effet de la condition de sortie choisie. Nous étions censés n'observer aucune réflexion en fin de tube, mais le fait d'annuler la pression à la fin oblige à priori une partie du pulse envoyé en entrée à se réfléchir.
+
 
 
 &nbsp;
 
-Nous pouvons d'ailleurs mettre cela en parallèle avec l'évolution du débit à ces deux points de mesure : 
+Nous pouvons mettre cela en parallèle avec l'évolution du débit à ces deux points de mesure : 
+
+
+<p align="center">
+<img src="Images/TP/Newentreesortiedebitparefl.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+Dans cette configuration, le sang réfléchi dans le sens inverse de l'écoulement peut ressortir du tube par l'entrée, puisque le tube n'y est pas bouché, d'où le débit négatif observé peu de temps après le pic de débit en sortie. C'est ce que nous avions déjà pu observer en bouchant le tube en amont.
+
+
+&nbsp;
+
+Lorsque nous annulons les pressions et débits en entrée, nous obtenons la figure suivante pour les débits :
+
+<p align="center">
+<img src="Images/TP/entreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+De la même manière que pour la pression, le débit observé en entrée est très important mais devient rapidement moindre lorsqu'une première réflexion s'est produite. La condition de sortie ne peut toujours pas être parfaitement respectée si l'on impose une pression nulle en sortie.
+
+
+
+### Condition réflexive
+
+Cette fois, nous tentons d'annuler la pression en entrée et en sortie, ainsi que le débit en entrée tout en prenant une condition à priori réflexive.
+
 
 
 <p align="center">
 <img src="Images/TP/Newentreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
+
+<p align="center">
+<img src="Images/TP/Newentreesortiepress.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+
+
+<img src="Images/TP/densité 0.01 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 0.1 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une densité de 0.01/ de 0.1
+</p>
+
+
+
+<img src="Images/TP/densité 0.01 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/densité 0.1 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+pulse pour une densité de 0.01/ de 0.1
+</p>
+
+
+
+
+
+
+
+Il s'agit ici d'un résultat très similaire à ce que nous avions pu trouver en bouchant le tube avec un débit nul en sortie.
 
 Dans les conditions standard, comme au-dessus, le débit en sortie est quasiment nul tandis que celui en entrée atteste à priori de multiples réflexions.
 
@@ -331,30 +391,8 @@ Ces observations viennent des conditions de sortie imposées dans notre programm
 
 Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée y est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus faible qu'ailleurs.
 
-Dans cette configuration, le sang réfléchi dans le sens inverse de l'écoulement peut même ressortir du tube par l'entrée, d'où le débit négatif observé peu de temps après le pic de débit en sortie. C'est ce que nous avions déjà pu observer en bouchant le tube.
-
 
 Cet effet peut également expliquer l'intensité du pic de pression en sortie, puisque l'on s'attend bien à avoir plus de pression dans une cette même zone, celle amenée initialement par l'onde de pulsation ainsi que celle du flux renvoyé.
-
-
-&nbsp;
-
-Lorsque nous annulons les pressions et débits en entrée, nous obtenons la figure suivante :
-
-<p align="center">
-<img src="Images/TP/entreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
-</p>
-
-De la même manière que pour la pression, le débit observé en entrée est très important mais devient rapidement moindre lorsque la première réflexion s'est produite. 
-
-
-
-
-
-
-
-
-
 
 
 
