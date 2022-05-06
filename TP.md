@@ -334,65 +334,57 @@ Lorsque nous annulons les pressions et débits en entrée, nous obtenons la figu
 <img src="Images/TP/entreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
-De la même manière que pour la pression, le débit observé en entrée est très important mais devient rapidement moindre lorsqu'une première réflexion s'est produite. La condition de sortie ne peut toujours pas être parfaitement respectée si l'on impose une pression nulle en sortie.
+Le débit en sortie du tube est bien moins important qu'en entrée, tandis qu'un important pic négatif (courbe bleue) se profile après le signal en sortie.
+Ce débit négatif observé en entrée est très important mais s'amoindrit rapidement lorsqu'une première réflexion s'est produite. 
+
+La condition de sortie ne peut toujours pas être parfaitement respectée si l'on impose une pression nulle en sortie. 
 
 
 
 ### Condition réflexive
 
-Cette fois, nous tentons d'annuler la pression en entrée et en sortie, ainsi que le débit en entrée tout en prenant une condition à priori réflexive.
+Cette fois, nous tentons d'annuler la pression en entrée et en sortie, ainsi que le débit en entrée tout en prenant une condition à priori réflexive :
 
 
+<img src="Images/TP/Newentreesortiepress.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/entreesortiepressreflCOND.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
-<img src="Images/TP/Newentreesortiedebit.png" alt="Arterial Tree" style="width:70%; border:0;">
+sans annuler les paramètres (à gauche) / en annulant (à droite) - pression
 </p>
 
-<p align="center">
-<img src="Images/TP/Newentreesortiepress.png" alt="Arterial Tree" style="width:70%; border:0;">
-</p>
+&nbsp;
 
-
-
-<img src="Images/TP/densité 0.01 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/densité 0.1 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/Newentreesortiedebit.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/entreesortiedebitreflCOND.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
 
 <p align="center">
-pulse pour une densité de 0.01/ de 0.1
-</p>
-
-
-
-<img src="Images/TP/densité 0.01 PM.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/densité 0.1 PM.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
-
-<p align="center">
-pulse pour une densité de 0.01/ de 0.1
+sans annuler les paramètres (à gauche) / en annulant (à droite) - débit
 </p>
 
 
 
+Pour l'évolution de la pression comme celle du débit, nous obtenons avec les paramètres initiaux des résultats très similaires à ce que nous avions pu trouver en bouchant le tube avec un débit nul en sortie.
 
+Dans les conditions standard, le débit en sortie est quasiment nul tandis que celui en entrée atteste à priori de multiples réflexions.
 
-
-
-Il s'agit ici d'un résultat très similaire à ce que nous avions pu trouver en bouchant le tube avec un débit nul en sortie.
-
-Dans les conditions standard, comme au-dessus, le débit en sortie est quasiment nul tandis que celui en entrée atteste à priori de multiples réflexions.
-
-
-Le débit en sortie du tube est bien moins important qu'en entrée, tandis qu'un important pic négatif (courbe bleue) se profile après le signal en sortie.
-
-Ces observations viennent des conditions de sortie imposées dans notre programme. En effet, nous considérons une condition de type Windkessel en sortie du tube. La résistance périphérique (résistance le long des parois du tube lors de l'écoulement du sang) y est définie par : 
+Ces observations viennent naturellement de la condition de sortie imposée dans notre programme. En effet, nous considérons ici une condition de type Windkessel en sortie du tube. La résistance périphérique (résistance le long des parois du tube lors de l'écoulement du sang) y est définie par : 
 
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=R_{parois} = \frac{P_{entree} - P_{sortie}}{Q}">
 </p>
 
-Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée y est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus faible qu'ailleurs.
+Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée y est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une faible partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus faible qu'ailleurs.
 
+&nbsp;
 
-Cet effet peut également expliquer l'intensité du pic de pression en sortie, puisque l'on s'attend bien à avoir plus de pression dans une cette même zone, celle amenée initialement par l'onde de pulsation ainsi que celle du flux renvoyé.
+Pour les figures obtenues en annulant les pressions aux extrémités ainsi que le débit en entrée, nous n'obtenons plus de phénomène de réflexion aussi marqué. Comme précédemment, l'onde n'est pas totalement réfléchie (nous avons un pic de débit en sortie), donc la condition de sortie n'est pas pleinement respectée.
+
+Mais à présent, nous pouvons à priori trouver une explication pour l'intensité du pic de pression en sortie, qui est toujours aussi élevée que pour l'autre condition de sortie. Comme nous avons de multiples réflexions, on peut s'attendre à avoir une plus grande pression dans une même zone. L'onde qui se propage initialement va croiser des réflexions et s'additionner avec, notamment en sortie où nous venons d'imposer une condition proche de celle du tube bouché.
+
+&nbsp;
+
+Au final, nous pourrions affirmer que l'annulation des pressions (plus encore que l'annulation du débit en entrée) a un plus grand impact sur l'évolution du pulse dans le tube que les conditions imposées en sortie. Dans les deux cas testés, nous obtenons des résultats se situant dans une sorte d'entre-deux, une partie de l'onde se réflechit et le reste traverse effectivement le tube, et ce presque indépendamment de ce que l'on tente d'imposer aux extrémités.
 
 
 
@@ -406,7 +398,6 @@ Cet effet peut également expliquer l'intensité du pic de pression en sortie, p
 
 Un des problèmes pouvant limiter notre analyse dans ce TP est dû aux endroits choisis dans le tube pour tracer l'évolution des paramètres. Si nous ne prenions que l'évolution au cours du temps de ce qu'il se passe en entrée et/ou en sortie, nous ne pourrions pas vérifier le fonctionnement intermédiaire du programme.
 
-
 Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le long du tube, nous prenons des mesures également au milieu de celui-ci.
 
 
@@ -414,7 +405,7 @@ Pour y remédier et avoir un meilleur aperçu de l'évolution des paramètres le
 <img src="Images/TP/entreemilieusortie.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
-(nous reprenons la même configuration que la partie précédemment traitée)
+(nous reprenons les conditions standard, avec un pulse en entrée et une condition de Windkessel simple en sortie)
 
 Le même phénomène de reflux est perceptible au milieu du tube, même s'il est moins prononcé qu'en sortie.
 
