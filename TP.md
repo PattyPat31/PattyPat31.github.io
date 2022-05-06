@@ -417,7 +417,7 @@ Pour vérifier cela, on peut augmenter encore le nombre de points de mesure :
 
 
 <p align="center">
-<img src="Images/TP/touslespointspression.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/touslespointspression2.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
 En réalité, les pics de pression relevés tout au long du tube semblent décroître, en partant de la sortie du tube et jusqu'au quart de celui-ci.
