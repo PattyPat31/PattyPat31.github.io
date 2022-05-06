@@ -190,8 +190,6 @@ En réitérant l'essai par exemple pour une densité de 100, nous obtenons une d
 
 
 
-
-
 # Variation de la viscosité du sang passant dans le tube <a id="4"></a>
 
 
@@ -201,8 +199,7 @@ Nous réutilisons le pulse introduit précédemment, ainsi que tous les paramèt
 
 
 
-Pour un fluide ayant une viscosité très faible, par exemple de l'ordre de 1 à 1.10<sup>-4</sup> mP (0.001 et 0.0000001 dans le code), la pression et le débit - en entrée et en sortie du tube - sont de la forme suivante : 
-
+Pour un fluide ayant une viscosité très faible, par exemple de l'ordre de 1 à 1.10<sup>-4</sup> mP (0.001 et 0.0000001 poises dans le code), on obtient les pressions et débits en entrée et en sortie du tube suivants : 
 
 
 
@@ -215,45 +212,73 @@ pulse pour une viscosité de  1.10<sup>-4</sup> / 1 mP
 
 &nbsp;
 
+
+Le pulse est arrivé dans ces deux cas à la sortie sans perdre en intensité. En omettant dans cette partie l'action de la résistance périphérique du tube, on peut supposer que les pertes de charge sont négligeables dans ces essais.
+Une viscosité trop faible n'altère donc aucunement l'intensité ni l'aspect de la perturbation imposée en entrée.
+
+&nbsp;
+
+D'autres essais pour des viscosités plus importantes nous donnent les figures ci-contre :
+
 <img src="Images/TP/Nu_0.1.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
 <img src="Images/TP/Nu_0.2.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
-pulse pour une viscosité de 0.1/ de 0.2
+pulse pour une viscosité de 100 / de 200 mP
 </p>
 
 
 &nbsp;
 
+Ici, les perturbations imposées en entrée ressortent en ayant perdu en intensité. Nous pouvons donc vraisemblablement affirmer que la viscosité du fluide commence à amortir le pulse d'entrée. 
+
+D'autre part, une réflexion en entrée commence à se distinguer pour une viscosité de l'ordre de 100 mP. 
+Juste après le pulse imposé, une partie du fluide est directement renvoyée vers l'entrée, ce qui laisse apparaître un débit négatif. L'augmentation de la viscosité du fluide rend donc à priori l'onde imposée en entrée plus sujette à subir des réflexions, vu que le fluide résiste plus au mouvement et au passage de la perturbation.
+
+
+&nbsp;
+
+On vérifie cela en prenant des viscosités plus élevées :
 
 <img src="Images/TP/Nu_0.5.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
 <img src="Images/TP/Nu_1.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
-pulse pour une viscosité de 0.5/ de 1
+pulse pour une viscosité de 500 / de 1000 mP
 </p>
 
 &nbsp;
 
+L'apparition d'un débit négatif est d'autant plus marquée que la viscosité est élevée, comme attendu. 
+
+Aux temps longs, les débits d'entrée et de sortie tendent à prendre une même valeur nulle aux temps longs puisque la perturbation est passée et n'impacte plus le passage du fluide dans le tube.
+
+
+&nbsp;
+
+
+
+Si on augmente encore la viscosité du fluide :
 
 <p align="center">
 <img src="Images/TP/Nu_10.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 
 <p align="center">
-pulse pour une viscosité de 10
+pulse pour une viscosité de 10 000 mP (zoom sur le pulse en sortie à droite)
 </p>
 
 
+A ce stade, la viscosité du fluide est suffisamment importante pour que le pulse imposé en entrée soit quasiment totalement amorti en sortie du tube. 
 
 
 
 
+&nbsp;
 
+Pour les premiers essais, les signaux en entrée et en sortie sont à chaque fois repérés au mêmes instants (il faut environ 0.022s pour que le pulse arrive à la sortie du tube). Les modifications opérées sur la viscosité du fluide n'ont donc à priori pas impacté la vitesse du pulse. 
 
-
-
-
+Mais si on prend des viscosités supérieures, à partir de 500mP, le pic de pression en sortie commence à s'étaler sur la fin, même si le signal arrive en sortie du tube aux mêmes temps que précédemment. On pourra donc en conclure que la viscosité n'a qu'un impact très faible sur la vitesse de la perturbation pour nos essais.
 
 
 
