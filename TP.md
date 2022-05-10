@@ -25,7 +25,9 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
           * [Condition non-réflexive](#parefl)
           * [Condition réflexive](#refl)
 * [Prise de pression et de débit à différents endroits dans le tube](#Diff)
-* [Amélioration de la vitesse de relevé des résultats](#CFL)
+* [Amélioration des résultats](#mieux)
+    * [Modification de la vitesse de relevé des résultats](#CFL)
+    * [Modification des périodes](#per)
 * [Modélisation linéaire du tube](#Lin)
 
 &nbsp;
@@ -320,7 +322,7 @@ Les résultats présentés ici seront basés sur les paramètres suivants :
 - Densité du fluide : ``1.06`` kg/m<sup>3</sup>
 - Viscosité du fluide : ``35`` millipoises [mP]
 
-On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée constante. 
+On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée constante. Afin d'avoir des résultats plus visibles, nous avons fait tourner le programme sur 20 périodes (on se concentrera principalement sur la hauteur des premiers pics et sur les éventuelles réflexions, donc un tel affichage est plus efficace).
 
 &nbsp;
 
@@ -458,7 +460,14 @@ Pour vérifier cela, on peut augmenter encore le nombre de points de mesure :
 En réalité, les pics de pression relevés tout au long du tube semblent décroître, en partant de la sortie du tube et jusqu'au quart de celui-ci.
 L'hypothèse des pertes de charge ne permet donc pas à priori d'expliquer une telle évolution de la pression dans le tube.
 
-# Amélioration de la vitesse de relevé des résultats <a id="CFL"></a>
+
+
+
+ # Amélioration des résultats <a id="mieux"></a>
+
+Nous allons tenter ici d'améliorer les résultats présentés dans la partie précédente.
+
+## Modification de la vitesse de relevé des résultats <a id="CFL"></a>
 
 Nous avons pu envisager que les résultats précédemment obtenus étaient peut-être dûs à un mauvais relevé des pressions au cours du temps. 
 
@@ -519,9 +528,23 @@ Evolution du débit - CFL de 2.2
 Ici, le débit en sortie diminue drastiquement à cause de la condition imposée en sortie mais les pics de débit diminuent à priori de la même manière que pour la pression et à cause des mêmes pertes de charge au long du tube.
 
 
+
+## Modification des périodes <a id="per"></a>
+
+
+Par défaut, nous avons choisi de prendre dans la partie précédente 20 périodes, d'une durée de 0.05s chacune pour notre modèle. 
+
+
+
+
+
+
+
+
+
 # Cas linéaire :  <a id="Lin"></a>
 
-Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
+Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, principalement à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
 Il sera donc présenté ici une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
 
 
