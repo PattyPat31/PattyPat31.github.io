@@ -559,7 +559,6 @@ Cependant, l'affichage n'est pas encore acceptable avec ces paramètres puisque 
 
 On augmente donc encore la durée, mais en diminuant cette fois le nombre de périodes :
 
-
 <p align="center">
 <img src="Images/TP/debit5per05.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
@@ -567,21 +566,27 @@ On augmente donc encore la durée, mais en diminuant cette fois le nombre de pé
 Evolution du débit - 5 périodes de 0.5s
 </p>
 
+De cette manière, on peut retrouver l'évolution temporelle du pulse imposé en entrée, sans avoir d'effets dûs à la non-linéarité.
 
+&nbsp;
 
+On peut encore tenter de diminuer la durée des 5 périodes, pour réduire le temps de calcul :
+ 
+<img src="Images/TP/debitnb5per025parefl.png" alt="image2" style="display:inline-block; width:37%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/debit5per01.png" alt="image1" style="display:inline-block; width:60%; border:0;"/> <!-- Image à gauche -->
+<p>
+<p align="center">
+Evolution du débit - 5 périodes de 0.25s / 0.1s
+</p>
 
+On retombe sur des résultats peu fiables vers la fin de l'éxécution, notamment pour 0.10s. On ne pourra donc à priori pas beaucoup réduire le temps de calcul tout en obtenant de bons résultats.
 
-
-
-
-
-
-
+Nous considèrerons donc que l'on peut obtenir des résultats exploitables avec 5 périodes de 0.5 - 0.25s chacune, ce qui se rapproche relativement bien des données implémentées par défaut dans le programme utilisé. Néanmoins, comme nous avons fait des tests avec un tube non-réflexif, ces paramètres ne resteront pas nécessairement adéquats pour traiter un autre type de condition limite, notamment des conditions impliquant des réflexions pour lesquelles on souhaiterait avoir une plus grande plage de données pour analyser l'évolution. 
 
 
 # Cas linéaire :  <a id="Lin"></a>
 
-Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, principalement à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
+Pour tous nos affichages précédents, il est clair que nos résulats restent peu fiables, principalement à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
 Il sera donc présenté ici une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
 
 
