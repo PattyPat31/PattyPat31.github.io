@@ -50,7 +50,7 @@ Ce programme fonctionne initialement avec des valeurs par défaut, relatives aux
 - Compliance périphérique ``52049`` ml/dyn/cm<sup>2</sup>
 
 
-Ici, la compliance est la capacité du tube à adapter son volume lorsqu'une variation de pression se produit et la résistance périphérique réfère à la résistance le long des parois du tube lors de l'écoulement du sang.
+Ici, la compliance est la capacité du tube à adapter son volume lorsqu'une variation de pression se produit et la résistance périphérique réfère à la résistance le long des parois du tube lors de l'écoulement du sang. Initialement, nous obtenions les résultats après avoir fait tourner le programme sur quatre périodes, d'une durée initale de 0.85s chacune.
 
 L'une des tâches a donc été de modifier ces paramètres par défaut pour observer la réponse du programme et extrapoler à partir de ce modèle le fonctionnement d'un vaisseau quelconque. 
 
@@ -533,6 +533,43 @@ Ici, le débit en sortie diminue drastiquement à cause de la condition imposée
 
 
 Par défaut, nous avons choisi de prendre dans la partie précédente 20 périodes, d'une durée de 0.05s chacune pour notre modèle. 
+
+Nous avons donc tenté de changer ces paramètres, pour trouver une possible source d'erreur dans nos affichages. Ici, nous réutiliserons une condition de sortie non-réflexive pour présenter nos résultats, ce qui nous permettra de faire des comparaisons plutôt sur le début de l'éxécution de notre programme (là où nos avions le plus de non-linéarités dans la partie précédente) et d'omettre les (éventuelles) limites d'un affichage trop restreint pour observer les réflexions successives.
+
+Nous n'explicitons que les figures obtenues pour l'évolution du débit dans le tube, mais les résultats obtenus pour d'autres paramètres comme la pression sont similaires.
+
+&nbsp;
+
+Précédemment, nous avions effectué nos tests avec des périodes de très courte durée (0.05s). Ce choix s'est basé en grande partie sur une recherche de rapidité d'éxécution du code, puisque la vitesse d'éxécution augmentait d'autant plus que les périodes étaient longues. 
+
+Un essai à entreprendre était donc d'augmenter la durée des périodes. Pour conserver un programme qui fonctionne en un temps raisonnable, nous avons dû diminuer en parallèle le nombre de périodes.
+Pour 10 périodes de 0.1s et de 0.25s chacune, nous obtenons :
+
+
+<img src="Images/TP/debit10per01.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/debit10per025.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+
+Evolution du débit - 10 périodes de 0.1s / 0.25s
+</p>
+
+On peut clairement voir qu'en augmentant la durée des périodes, les phénomènes non-linéaires présents juste après l'affichage du pulse qui se propage se dissipient. 
+Cependant, l'affichage n'est pas encore acceptable avec ces paramètres puisque les pulses relevés à différents endroits du tube semblent se superposer, notamment à cause du nombre trop élevé de périodes que l'on a pris.
+
+&nbsp;
+
+On augmente donc encore la durée, mais en diminuant cette fois le nombre de périodes :
+
+
+<p align="center">
+<img src="Images/TP/debit5per05.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+<p align="center">
+Evolution du débit - 5 périodes de 0.5s
+</p>
+
+
+
+
 
 
 
