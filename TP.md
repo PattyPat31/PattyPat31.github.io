@@ -290,8 +290,7 @@ Mais si on prend des viscosités supérieures, à partir de 500mP, le pic de pre
 
 #  Tests complémentaires <a id="5"></a>
 
-On prend en condition d’entrée une pression à l’entrée du tube constante (case3 on modifie la pression en pression non sinusoïdale) et en condition de sortie (case 1 condition de sortie de Windkessel)
-
+On prend en condition d’entrée une pression à l’entrée du tube constante (on prend un cas où la pression en entrée est non sinusoïdale) et une condition de sortie de type Windkessel simple (une condition réflexive).
 
 **Démarche d’étude :**
 
@@ -302,18 +301,28 @@ On choisit des pressions de tel sorte à avoir un écoulement (Pentrée ≠ Psor
 
 - Courbe du débit en sortie en fonction de la section :
 
+<p align="center">
+<img src="Images/TP/fig 1 I.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
 
-
+&nbsp;
 
 
 En général :
+
 Le débit est le volume de fluide par unité de temps qui passe devant un point à travers une
-surface A. Ici, le cylindre ombragé de fluide passe devant le point P dans un tuyau uniforme
+surface A. 
+
+<p align="center">
+<img src="Images/TP/fig 2 I.png" alt="Arterial Tree" style="width:60%; border:0;">
+</p>
+
+Ici, le cylindre ombragé de fluide passe devant le point P dans un tuyau uniforme
 en un temps t. Le volume du cylindre est Ad et la vitesse moyenne est v =d/t.
 Le débit s’écrit donc :
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=Q=\frac{Ad}{t}=A\Vec{v}">
+<img src="https://render.githubusercontent.com/render/math?math=Q=\frac{Ad}{t}=A\Vec{v}">
 </p>
 
 
@@ -327,7 +336,9 @@ on remarque que la représentation graphique de cette évolution est une droite 
 - Courbe du débit en sortie en fonction de l’elastance :
 
 
-
+<p align="center">
+<img src="Images/TP/fig 3 I.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
 
 
 On sait que le débit (ml) est inversement proportionnel à l’elastance (E =DP/DV)
@@ -348,20 +359,21 @@ plus la valeur de l’élastance est grande moins le débit en sortie du tube es
 - Courbe du débit en sortie du tube en fonction de la longueur du tube :
 
 
-
-
-
+<p align="center">
+<img src="Images/TP/fig 4 I.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
 
 
 
 
 
 En général :
+
 La loi de Poiseuille nous donne la relation liant le débit volumique, la viscosité dynamique
 du fluide, la différence de pression, le rayon et la longueur du tube :
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=q_v=\frac{\pi r^4}{8\eta l}.(p_1 - p_2)">
+<img src="https://render.githubusercontent.com/render/math?math=q_v=\frac{\pi r^4}{8\eta l}.(p_1 - p_2)">
 </p>
 
 
