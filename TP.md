@@ -19,6 +19,7 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 * [Nouvelle condition d'entrée - pulse](#2)
 * [Variation de la densité du sang passant dans le tube ](#3)
 * [Variation de la viscosité du sang passant dans le tube ](#4)
+* [Tests complémentaires ](#5)
 * [Essais de nouvelles conditions de sortie](#Sortie) 
      * [Cas d'une artère bouchée](#Stop) 
      * [Pression et débit nuls en entrée / Pression nulle en sortie](#Nul)
@@ -287,8 +288,91 @@ Mais si on prend des viscosités supérieures, à partir de 500mP, le pic de pre
 
 
 
+#  Tests complémentaires <a id="5"></a>
+
+On prend en condition d’entrée une pression à l’entrée du tube constante (case3 on modifie la pression en pression non sinusoïdale) et en condition de sortie (case 1 condition de sortie de Windkessel)
 
 
+**Démarche d’étude :**
+
+On choisit des pressions de tel sorte à avoir un écoulement (Pentrée ≠ Psortie). On obtient donc lors du tracé de du débit en sortie du tube en fonction du temps des débits qui se stabilise et devient constant au cours du temps. Le but est de faire une étude paramétrique donc on change au fur et à mesure les valeurs de la section A0 dans un premier temps (ensuite les valeurs de la longueur du tube et de l’elastance) et on prélève les valeurs de débit à la sortie du tube directement du graphique (débit, temps) pour pouvoir tracer la courbe d’évolution du débit en sortie du tube en fonction des différentes valeurs de section
+(ensuite des différentes valeurs de longueur du tube et d’elastance).
+
+
+
+- Courbe du débit en sortie en fonction de la section :
+
+
+
+
+
+En général :
+Le débit est le volume de fluide par unité de temps qui passe devant un point à travers une
+surface A. Ici, le cylindre ombragé de fluide passe devant le point P dans un tuyau uniforme
+en un temps t. Le volume du cylindre est Ad et la vitesse moyenne est v =d/t.
+Le débit s’écrit donc :
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=Q=\frac{Ad}{t}=A\Vec{v}">
+</p>
+
+
+Donc le débit Q est proportionnel à la section A d’après la formule donnée.
+D’après la figure ci-contre qui donne l’évolution du débit en sortie du tube en fonction de la section,
+on remarque que la représentation graphique de cette évolution est une droite linéaire affine. Donc la courbe traduit bien la proportionnalité de la section par rapport au débit.
+(Plus la valeur de la section augmente plus le débit en sortie du tube est important)
+
+&nbsp;
+
+- Courbe du débit en sortie en fonction de l’elastance :
+
+
+
+
+
+On sait que le débit (ml) est inversement proportionnel à l’elastance (E =DP/DV)
+. Ici on a :
+La loi du tube qui s’écrit : A(I)=A0*(P(I)/EL+1))
+Et le débit Q=A(I)*U(I) donc Q= A0*(P(I)/EL+1)*U(I)
+
+D’après la figure ci-dessus qui donne l’évolution du débit en sortie du tube en fonction de
+l’élastance du tube, on remarque qu’on obtient une hyperbole qui est généralement la
+représentation graphique d’une fonction inverse y=1/x. Donc la courbe est bien en accord
+avec la relation liant le débit et l’elastance. Dans la figure 2 on remarque également que
+plus la valeur de l’élastance est grande moins le débit en sortie du tube est important.
+
+
+
+&nbsp;
+
+- Courbe du débit en sortie du tube en fonction de la longueur du tube :
+
+
+
+
+
+
+
+
+
+
+En général :
+La loi de Poiseuille nous donne la relation liant le débit volumique, la viscosité dynamique
+du fluide, la différence de pression, le rayon et la longueur du tube :
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=q_v=\frac{\pi r^4}{8\eta l}.(p_1 - p_2)">
+</p>
+
+
+Donc, de la formule ci-dessus on peut dire que le débit varie de manière inversement
+proportionnelle à la longueur.
+D’après la troisième figure de cette partie, qui donne l’évolution du débit du fluide en sortie du tube en fonction de
+différentes valeurs de longueur du tube, on remarque qu’on obtient une courbe qui se
+rapproche plus d’une droite linéaire décroissante et qui traduit donc une proportionnalité.
+Cela va en contradiction avec la formule donnée par la loi de poiseuille. Pour donner une
+explication à cela on peut dire que la linéarité qu’on remarque sur la courbe est due aux
+frottements.
 
 
 # Essais de nouvelles conditions de sortie :  <a id="Sortie"></a>
