@@ -19,6 +19,7 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 * [Nouvelle condition d'entrée - pulse](#2)
 * [Variation de la densité du sang passant dans le tube ](#3)
 * [Variation de la viscosité du sang passant dans le tube ](#4)
+* [Variation de la section du tube ](#6)
 * [Tests complémentaires ](#5)
 * [Essais de nouvelles conditions de sortie](#Sortie) 
      * [Cas d'une artère bouchée](#Stop) 
@@ -282,6 +283,27 @@ A ce stade, la viscosité du fluide est suffisamment importante pour que le puls
 Pour les premiers essais, les signaux en entrée et en sortie sont à chaque fois repérés au mêmes instants (il faut environ 0.022s pour que le pulse arrive à la sortie du tube). Les modifications opérées sur la viscosité du fluide n'ont donc à priori pas impacté la vitesse du pulse. 
 
 Mais si on prend des viscosités supérieures, à partir de 500mP, le pic de pression en sortie commence à s'étaler sur la fin, même si le signal arrive en sortie du tube aux mêmes temps que précédemment. On pourra donc en conclure que la viscosité n'a qu'un impact très faible sur la vitesse de la perturbation pour nos essais.
+
+
+
+
+
+
+
+# Variation de de la section du tube <a id="6"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
