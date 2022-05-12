@@ -284,7 +284,88 @@ Mais si on prend des viscosités supérieures, à partir de 500mP, le pic de pre
 
 
 
+# Variation de la section, la longueur, la compliance et la résistance périphérique du tube <a id="4"></a>
 
+<p align="center">
+<img src="Images/TP/paramètres initiaux.png" alt="Paramètres initiaux" style="width:70%; border:0;">
+</p>
+
+<p align="center">
+Section du tube 0.1361 / Longueur du tube 20 / Résistance périphérique 34875 / Compliance périphérique 52049
+</p>
+
+<p align="center">
+<img src="Images/TP/longueur 10.png" alt="longueur 10" style="width:70%; border:0;">
+</p>
+
+<p align="center">
+Longueur du tube 10
+</p>
+
+Ici en modifiant la longueur du tube en le rendant deux fois moins long, on observe une casi superposition des valeurs de pression et de débit montrant qu'elles n'ont pas le temps de subir de grands changements avec une variation si petite..
+
+<p align="center">
+<img src="Images/TP/longueur 100.png" alt="longueur 100" style="width:70%; border:0;">
+</p>
+
+<p align="center">
+Longueur du tube 100
+</p>
+
+Avec une longueur 5 fois plus grande on observe que le débit en sortie est moins élevé mais qu'il se stabilise autour de là-même valeur, de plus le pulse de pression est moins élevé.
+
+<p align="center">
+<img src="Images/TP/longueur 1000.png" alt="longueur 1000" style="width:70%; border:0;">
+</p>
+
+<p align="center">
+Longueur du tube 1000
+</p>
+
+Avec un tube d'une telle longueur on observe une brutale chute de débit en sortie de plus la pression n'arrive pas à être communiqué en sortie de tube.
+
+<p align="center">
+<img src="Images/TP/section 0.01.png" alt="section 0.01" style="width:70%; border:0;">
+</p>
+
+<p align="center">
+Section du tube de 0.01
+</p>
+
+Ici la section étant étant 10 fois moins grande le signal de débit en entrée et en sortie ne varie casi pas et le pulse de pression ne communique pas.
+</p>
+
+<p align="center">
+<img src="Images/TP/section 0.5.png" alt="section 0.5" style="width:70%; border:0;">
+</p>
+
+<p align="center">
+Section du tube de 0.5
+</p>
+
+Une section 5 fois plus grande que l'originale n'implique pas de changement de pression cependant on observe une instabilité numérique du résultat de débit en entrée et sortie cependant il reste stable autour des mêmes valeurs.
+
+
+<p align="center">
+<img src="Images/TP/Compliance périphérique 5204.9.png" alt="Compliance périphérique 5204.9" style="width:70%; border:0;">
+</p>
+
+<p align="center">
+<img src="Images/TP/Compliance périphérique 520490.png" alt="Compliance périphérique 520490" style="width:70%; border:0;">
+</p>
+
+On modifiant la compliance d'un facteur 10 on observe très peu de variations de pression et débit.
+
+<p align="center">
+<img src="Images/TP/Résistance périphérique 3487.5.png " alt="Résistance périphérique 3487.5" style="width:70%; border:0;">
+</p>
+
+Avec une résistance périphérique moins élevé on observe une superposition des débits en entrée et en sortie. On observe les mêmes variations de pression avec une intensité différente.
+
+<p align="center">
+<img src="Images/TP/Résistance périphérique 348750.png" alt="Résistance périphérique 348750.png" style="width:70%; border:0;">
+</p>
+ Une résistance périphérique 10 fois moins élevée montre une instabilitée des résultats ne permettant pas de donner d'interprétation sur l'évolution du débit.
 
 
 
