@@ -802,7 +802,7 @@ J'ai donc tracé les graphes pour différents grandeurs ( pression, débit et se
 Pour commencer, j'ai représenté celle concernant la pression, le débit et la section :
 
 <p align="center">
-<img src="Images/TP/Pressure Section Debit Début.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/Pressure Section Debit Debut.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 <p align="center">
 Comparaison Linéaire Non-Linéaire pour la pression le débit et la section en début de tube
@@ -849,7 +849,7 @@ Par la suite, j'ai changé la condition d'entrée afin d'imposer une pression de
 Solution Analytique Section Totale
 </p>
 
-<img src="Images/TP/Section Evolution Pulse Lineaire Début.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Section Evolution Pulse Lineaire Debut.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
 <img src="Images/TP/Section Evolution Pulse Lineaire Fin.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
