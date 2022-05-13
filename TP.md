@@ -789,8 +789,8 @@ Pour tous nos affichages précédents, il est clair que nos résulats restent pe
 Il sera donc présenté ici une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
 Pour étudier l'évolution d'un point de vue linéaire de cette modélisation, il a fallu modifier le programme de la manière suivante :
 
-<img src="Images/TP/Modifs Pour Prog Linéaire 1.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/Modifs Pour Prog Linéaire 2.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/Modifs Pour Prog Lineaire 1.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Modifs Pour Prog Lineaire 2.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
 Parties du programme modifiées
@@ -802,7 +802,7 @@ J'ai donc tracé les graphes pour différents grandeurs ( pression, débit et se
 Pour commencer, j'ai représenté celle concernant la pression, le débit et la section :
 
 <p align="center">
-<img src="Images/TP/Pressure Section Débit Début.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/Pressure Section Debit Début.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 <p align="center">
 Comparaison Linéaire Non-Linéaire pour la pression le débit et la section en début de tube
@@ -813,7 +813,7 @@ J'ai mesuré les valeurs de l'amplitude pour chacun des graphes suivants. A prem
 Pour ce qui concerne ces mêmes grandeurs en fin de tube , on obtient :
 
 <p align="center">
-<img src="Images/TP/Pressure Section Débit Fin.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/Pressure Section Debit Fin.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 <p align="center">
 Comparaison Linéaire Non-Linéaire pour la pression le débit et la section en fin de tube
@@ -824,7 +824,7 @@ Les constats sont les mêmes que pour celles en début de tube. Les valeurs de p
 Ensuite, j'ai comparé la même chose pour la vitesse et tau en début de tube et en fin de tube :
 
 <p align="center">
-<img src="Images/TP/Vitesse et Tau Début.png" alt="Arterial Tree" style="width:70%; border:0;">
+<img src="Images/TP/Vitesse et Tau Debut.png" alt="Arterial Tree" style="width:70%; border:0;">
 </p>
 <p align="center">
 Comparaison Linéaire Non-Linéaire pour la vitesse et tau en début de tube
@@ -849,8 +849,8 @@ Par la suite, j'ai changé la condition d'entrée afin d'imposer une pression de
 Solution Analytique Section Totale
 </p>
 
-<img src="Images/TP/Section Evolution Pulse Linéaire Début.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
-<img src="Images/TP/Section Evolution Pulse Linéaire Fin.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/Section Evolution Pulse Lineaire Début.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Section Evolution Pulse Lineaire Fin.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
 
 <p align="center">
 Parties du programme modifiées
