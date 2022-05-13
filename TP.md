@@ -788,4 +788,57 @@ Nous considèrerons donc que l'on peut obtenir des résultats exploitables avec 
 Pour tous nos affichages précédents, il est clair que nos résulats restent peu fiables, principalement à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
 Il sera donc présenté ici une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
 
+</p>
+
+J'ai mesuré les valeurs de l'amplitude pour chacun des graphes suivants. A première vue, on ne remarque aucune différence à l'oeil nu. Néanmoins, on constate, de manière générale, que les amplitudes sont très légèrement plus élevées lorqu'on utilise le programme linéaire. Cela signifie que pour une évolution linéaire les valeurs de pression, de débit et de section sont un peu plus importantes.
+
+Pour ce qui concerne ces mêmes grandeurs en fin de tube , on obtient :
+
+<p align="center">
+<img src="Images/TP/Pressure Section Débit Fin.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+<p align="center">
+Comparaison Linéaire Non-Linéaire pour la pression le débit et la section en fin de tube
+</p>
+
+Les constats sont les mêmes que pour celles en début de tube. Les valeurs de pression, de débit et de section sont plus grandes pour le tube linéaire par rapport au non-linéaire.
+
+Ensuite, j'ai comparé la même chose pour la vitesse et tau en début de tube et en fin de tube :
+
+<p align="center">
+<img src="Images/TP/Vitesse et Tau Début.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+<p align="center">
+Comparaison Linéaire Non-Linéaire pour la vitesse et tau en début de tube
+</p>
+
+<p align="center">
+<img src="Images/TP/Vitesse et Tau Fin.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+<p align="center">
+Comparaison Linéaire Non-Linéaire pour la vitesse et tau en fin de tube
+</p>
+
+Concernant la valeur de tau, on remarque une représentation sinusoïdale par l'intermédiaire du programme non linéaire alors que linéairement, on voit que la valeur de tau reste nulle tout le long. Si on s'intéresse à la vitesse, on ne voit pas de différences à l'oeil nu mais les différences d'amplitude sont très légères.
+Concernant la fin du tube, les valeurs entre linéaire et non-linéaire sont approximativement similaires. Il n'y a donc pas de différences significatives entre le cas linéaire et non-linéaire.
+
+Par la suite, j'ai changé la condition d'entrée afin d'imposer une pression de type pulse à l'entrée du tube. Tout cela dans le but de comparer l'évolution de la section dans le temps avec la solution analytique obtenue grâce à un autre programme :
+
+<p align="center">
+<img src="Images/TP/Solution Analytique Section Totale.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+<p align="center">
+Solution Analytique Section Totale
+</p>
+
+<img src="Images/TP/Section Evolution Pulse Linéaire Début.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Section Evolution Pulse Linéaire Fin.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+Parties du programme modifiées
+</p>
+
+Pour cette partie, on constate que, par l'intermédiaire du programme linéaire, on obtient seulement le début de la solution analytique obtenue au-dessus. 
+
+
 
