@@ -785,9 +785,27 @@ Nous considèrerons donc que l'on peut obtenir des résultats exploitables avec 
 
 # Cas linéaire :  <a id="Lin"></a>
 
-Pour tous nos affichages précédents, il est clair que nos résulats restent peu fiables, principalement à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
+Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
 Il sera donc présenté ici une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
+Pour étudier l'évolution d'un point de vue linéaire de cette modélisation, il a fallu modifier le programme de la manière suivante :
 
+<img src="Images/TP/Modifs Pour Prog Linéaire 1.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+<img src="Images/TP/Modifs Pour Prog Linéaire 2.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+
+<p align="center">
+Parties du programme modifiées
+</p>
+
+Ensuite, j'ai décidé de comparer les résultats et courbes obtenues par l'intermédiaire du programme linéaire et non-linéaire. Pour cela, j'ai décidé d'utiliser les paramètres par défaut ( de départ ). En ce qui concerne les conditions d'entrée et de sortie, j'ai choisi le cas n°3 correspondant à l'envoi d'une pression sinusoïdale à l'entrée du tube. De même pour la sortie, j'ai choisi le cas n°2 correspondant à une condition de sortie Windkessel de type RCR non réflexive.
+
+J'ai donc tracé les graphes pour différents grandeurs ( pression, débit et section puis vitesse et tau ) avec sur la partie gauche de l'image, les représentations obtenues avec le programme non-linéaire et, sur la partie droite, celles obtenues avec le programme linéaire.
+Pour commencer, j'ai représenté celle concernant la pression, le débit et la section :
+
+<p align="center">
+<img src="Images/TP/Pressure Section Débit Début.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+<p align="center">
+Comparaison Linéaire Non-Linéaire pour la pression le débit et la section en début de tube
 </p>
 
 J'ai mesuré les valeurs de l'amplitude pour chacun des graphes suivants. A première vue, on ne remarque aucune différence à l'oeil nu. Néanmoins, on constate, de manière générale, que les amplitudes sont très légèrement plus élevées lorqu'on utilise le programme linéaire. Cela signifie que pour une évolution linéaire les valeurs de pression, de débit et de section sont un peu plus importantes.
@@ -839,6 +857,4 @@ Parties du programme modifiées
 </p>
 
 Pour cette partie, on constate que, par l'intermédiaire du programme linéaire, on obtient seulement le début de la solution analytique obtenue au-dessus. 
-
-
 
