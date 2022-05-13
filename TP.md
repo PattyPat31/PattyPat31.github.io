@@ -783,6 +783,8 @@ On retombe sur des résultats peu fiables vers la fin de l'éxécution, notammen
 Nous considèrerons donc que l'on peut obtenir des résultats exploitables avec 5 périodes de 0.5 - 0.25s chacune, ce qui se rapproche relativement bien des données implémentées par défaut dans le programme utilisé. Néanmoins, comme nous avons fait des tests avec un tube non-réflexif, ces paramètres ne resteront pas nécessairement adéquats pour traiter un autre type de condition limite, notamment des conditions impliquant des réflexions pour lesquelles on souhaiterait avoir une plus grande plage de données pour analyser l'évolution. 
 
 
+
+
 # Cas linéaire :  <a id="Lin"></a>
 
 Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
