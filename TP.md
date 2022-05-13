@@ -19,13 +19,17 @@ C'est en retravaillant ce programme, en y ajoutant de nouvelles conditions d'ent
 * [Nouvelle condition d'entrée - pulse](#2)
 * [Variation de la densité du sang passant dans le tube ](#3)
 * [Variation de la viscosité du sang passant dans le tube ](#4)
+* [Variation de la section du tube ](#6)
+* [Tests complémentaires ](#5)
 * [Essais de nouvelles conditions de sortie](#Sortie) 
      * [Cas d'une artère bouchée](#Stop) 
      * [Pression et débit nuls en entrée / Pression nulle en sortie](#Nul)
           * [Condition non-réflexive](#parefl)
           * [Condition réflexive](#refl)
 * [Prise de pression et de débit à différents endroits dans le tube](#Diff)
-* [Amélioration de la vitesse de relevé des résultats](#CFL)
+* [Amélioration des résultats](#mieux)
+    * [Modification de la vitesse de relevé des résultats](#CFL)
+    * [Modification des périodes](#per)
 * [Modélisation linéaire du tube](#Lin)
 
 &nbsp;
@@ -48,7 +52,7 @@ Ce programme fonctionne initialement avec des valeurs par défaut, relatives aux
 - Compliance périphérique ``52049`` ml/dyn/cm<sup>2</sup>
 
 
-Ici, la compliance est la capacité du tube à adapter son volume lorsqu'une variation de pression se produit et la résistance périphérique réfère à la résistance le long des parois du tube lors de l'écoulement du sang.
+Ici, la compliance est la capacité du tube à adapter son volume lorsqu'une variation de pression se produit et la résistance périphérique réfère à la résistance le long des parois du tube lors de l'écoulement du sang. Initialement, nous obtenions les résultats après avoir fait tourner le programme sur quatre périodes, d'une durée initale de 0.85s chacune.
 
 L'une des tâches a donc été de modifier ces paramètres par défaut pour observer la réponse du programme et extrapoler à partir de ce modèle le fonctionnement d'un vaisseau quelconque. 
 
@@ -367,7 +371,123 @@ Avec une résistance périphérique moins élevé on observe une superposition d
 </p>
  Une résistance périphérique 10 fois moins élevée montre une instabilitée des résultats ne permettant pas de donner d'interprétation sur l'évolution du débit.
 
+# Variation de de la section du tube <a id="6"></a>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  Tests complémentaires <a id="5"></a>
+
+On prend en condition d’entrée une pression à l’entrée du tube constante (on prend un cas où la pression en entrée est non sinusoïdale) et une condition de sortie de type Windkessel simple (une condition réflexive).
+
+**Démarche d’étude :**
+
+On choisit des pressions de tel sorte à avoir un écoulement (Pentrée ≠ Psortie). On obtient donc lors du tracé de du débit en sortie du tube en fonction du temps des débits qui se stabilise et devient constant au cours du temps. Le but est de faire une étude paramétrique donc on change au fur et à mesure les valeurs de la section A0 dans un premier temps (ensuite les valeurs de la longueur du tube et de l’elastance) et on prélève les valeurs de débit à la sortie du tube directement du graphique (débit, temps) pour pouvoir tracer la courbe d’évolution du débit en sortie du tube en fonction des différentes valeurs de section
+(ensuite des différentes valeurs de longueur du tube et d’elastance).
+
+
+
+- Courbe du débit en sortie en fonction de la section :
+
+<p align="center">
+<img src="Images/TP/fig 1 I.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+&nbsp;
+
+
+En général :
+
+Le débit est le volume de fluide par unité de temps qui passe devant un point à travers une
+surface A. 
+
+<p align="center">
+<img src="Images/TP/fig 2 I.png" alt="Arterial Tree" style="width:60%; border:0;">
+</p>
+
+Ici, le cylindre ombragé de fluide passe devant le point P dans un tuyau uniforme
+en un temps t. Le volume du cylindre est Ad et la vitesse moyenne est v =d/t.
+Le débit s’écrit donc :
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=Q=\frac{Ad}{t}=A\Vec{v}">
+</p>
+
+
+Donc le débit Q est proportionnel à la section A d’après la formule donnée.
+D’après la figure ci-contre qui donne l’évolution du débit en sortie du tube en fonction de la section,
+on remarque que la représentation graphique de cette évolution est une droite linéaire affine. Donc la courbe traduit bien la proportionnalité de la section par rapport au débit.
+(Plus la valeur de la section augmente plus le débit en sortie du tube est important)
+
+&nbsp;
+
+- Courbe du débit en sortie en fonction de l’elastance :
+
+
+<p align="center">
+<img src="Images/TP/fig 3 I.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+
+On sait que le débit (ml) est inversement proportionnel à l’elastance (E =DP/DV)
+. Ici on a :
+La loi du tube qui s’écrit : A(I)=A0*(P(I)/EL+1))
+Et le débit Q=A(I)*U(I) donc Q= A0*(P(I)/EL+1)*U(I)
+
+D’après la figure ci-dessus qui donne l’évolution du débit en sortie du tube en fonction de
+l’élastance du tube, on remarque qu’on obtient une hyperbole qui est généralement la
+représentation graphique d’une fonction inverse y=1/x. Donc la courbe est bien en accord
+avec la relation liant le débit et l’elastance. Dans la figure 2 on remarque également que
+plus la valeur de l’élastance est grande moins le débit en sortie du tube est important.
+
+
+
+&nbsp;
+
+- Courbe du débit en sortie du tube en fonction de la longueur du tube :
+
+
+<p align="center">
+<img src="Images/TP/fig 4 I.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+
+
+
+
+
+En général :
+
+La loi de Poiseuille nous donne la relation liant le débit volumique, la viscosité dynamique
+du fluide, la différence de pression, le rayon et la longueur du tube :
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=q_v=\frac{\pi r^4}{8\eta l}.(p_1 - p_2)">
+</p>
+
+
+Donc, de la formule ci-dessus on peut dire que le débit varie de manière inversement
+proportionnelle à la longueur.
+D’après la troisième figure de cette partie, qui donne l’évolution du débit du fluide en sortie du tube en fonction de
+différentes valeurs de longueur du tube, on remarque qu’on obtient une courbe qui se
+rapproche plus d’une droite linéaire décroissante et qui traduit donc une proportionnalité.
+Cela va en contradiction avec la formule donnée par la loi de poiseuille. Pour donner une
+explication à cela on peut dire que la linéarité qu’on remarque sur la courbe est due aux
+frottements.
 
 
 # Essais de nouvelles conditions de sortie :  <a id="Sortie"></a>
@@ -401,7 +521,7 @@ Les résultats présentés ici seront basés sur les paramètres suivants :
 - Densité du fluide : ``1.06`` kg/m<sup>3</sup>
 - Viscosité du fluide : ``35`` millipoises [mP]
 
-On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée constante. 
+On travaille sur un fluide supposé newtonien, la viscosité sera donc supposée constante. Afin d'avoir des résultats plus visibles, nous avons fait tourner le programme sur 20 périodes (on se concentrera principalement sur la hauteur des premiers pics et sur les éventuelles réflexions, donc un tel affichage est plus efficace).
 
 &nbsp;
 
@@ -485,7 +605,7 @@ Dans les conditions standard, le débit en sortie est quasiment nul tandis que c
 Ces observations viennent naturellement de la condition de sortie imposée dans notre programme. En effet, nous considérons ici une condition de type Windkessel en sortie du tube. La résistance périphérique y est définie par : 
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=P_{entree}(t)=R_{parois} = \frac{P_{entree} - P_{sortie}}{Q}">
+<img src="https://render.githubusercontent.com/render/math?math=R_{parois} = \frac{P_{entree} - P_{sortie}}{Q}">
 </p>
 
 Où Q est le débit à l'endroit considéré. Ainsi, le débit est d'autant plus faible en sortie que la résistance considérée y est importante (elle est de 34875 dyme.s/cm  dans notre cas). Une quantité notoire de sang va être réfléchie en sortie du tube et seulement une faible partie traversera effectivement la sortie. De fait, le débit en sortie est bien plus faible qu'ailleurs.
@@ -539,7 +659,14 @@ Pour vérifier cela, on peut augmenter encore le nombre de points de mesure :
 En réalité, les pics de pression relevés tout au long du tube semblent décroître, en partant de la sortie du tube et jusqu'au quart de celui-ci.
 L'hypothèse des pertes de charge ne permet donc pas à priori d'expliquer une telle évolution de la pression dans le tube.
 
-# Amélioration de la vitesse de relevé des résultats <a id="CFL"></a>
+
+
+
+ # Amélioration des résultats <a id="mieux"></a>
+
+Nous allons tenter ici d'améliorer les résultats présentés dans la partie précédente.
+
+## Modification de la vitesse de relevé des résultats <a id="CFL"></a>
 
 Nous avons pu envisager que les résultats précédemment obtenus étaient peut-être dûs à un mauvais relevé des pressions au cours du temps. 
 
@@ -600,9 +727,65 @@ Evolution du débit - CFL de 2.2
 Ici, le débit en sortie diminue drastiquement à cause de la condition imposée en sortie mais les pics de débit diminuent à priori de la même manière que pour la pression et à cause des mêmes pertes de charge au long du tube.
 
 
+
+## Modification des périodes <a id="per"></a>
+
+
+Par défaut, nous avons choisi de prendre dans la partie précédente 20 périodes, d'une durée de 0.05s chacune pour notre modèle. 
+
+Nous avons donc tenté de changer ces paramètres, pour trouver une possible source d'erreur dans nos affichages. Ici, nous réutiliserons une condition de sortie non-réflexive pour présenter nos résultats, ce qui nous permettra de faire des comparaisons plutôt sur le début de l'éxécution de notre programme (là où nos avions le plus de non-linéarités dans la partie précédente) et d'omettre les (éventuelles) limites d'un affichage trop restreint pour observer les réflexions successives.
+
+Nous n'explicitons que les figures obtenues pour l'évolution du débit dans le tube, mais les résultats obtenus pour d'autres paramètres comme la pression sont similaires.
+
+&nbsp;
+
+Précédemment, nous avions effectué nos tests avec des périodes de très courte durée (0.05s). Ce choix s'est basé en grande partie sur une recherche de rapidité d'éxécution du code, puisque la vitesse d'éxécution augmentait d'autant plus que les périodes étaient longues. 
+
+Un essai à entreprendre était donc d'augmenter la durée des périodes. Pour conserver un programme qui fonctionne en un temps raisonnable, nous avons dû diminuer en parallèle le nombre de périodes.
+Pour 10 périodes de 0.1s et de 0.25s chacune, nous obtenons :
+
+
+<img src="Images/TP/debit10per01.png" alt="image2" style="display:inline-block; width:48%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/debit10per025.png" alt="image1" style="display:inline-block; width:48%; border:0;"/> <!-- Image à gauche -->
+
+Evolution du débit - 10 périodes de 0.1s / 0.25s
+</p>
+
+On peut clairement voir qu'en augmentant la durée des périodes, les phénomènes non-linéaires présents juste après l'affichage du pulse qui se propage se dissipient. 
+Cependant, l'affichage n'est pas encore acceptable avec ces paramètres puisque les pulses relevés à différents endroits du tube semblent se superposer, notamment à cause du nombre trop élevé de périodes que l'on a pris.
+
+&nbsp;
+
+On augmente donc encore la durée, mais en diminuant cette fois le nombre de périodes :
+
+<p align="center">
+<img src="Images/TP/debit5per05.png" alt="Arterial Tree" style="width:70%; border:0;">
+</p>
+<p align="center">
+Evolution du débit - 5 périodes de 0.5s
+</p>
+
+De cette manière, on peut retrouver l'évolution temporelle du pulse imposé en entrée, sans avoir d'effets dûs à la non-linéarité.
+
+&nbsp;
+
+On peut encore tenter de diminuer la durée des 5 périodes, pour réduire le temps de calcul :
+ 
+<img src="Images/TP/debitnb5per025parefl.png" alt="image2" style="display:inline-block; width:37%; border:0;"/> <!-- Image à droite -->
+<img src="Images/TP/debit5per01.png" alt="image1" style="display:inline-block; width:60%; border:0;"/> <!-- Image à gauche -->
+<p>
+<p align="center">
+Evolution du débit - 5 périodes de 0.25s / 0.1s
+</p>
+
+On retombe sur des résultats peu fiables vers la fin de l'éxécution, notamment pour 0.10s. On ne pourra donc à priori pas beaucoup réduire le temps de calcul tout en obtenant de bons résultats.
+
+Nous considèrerons donc que l'on peut obtenir des résultats exploitables avec 5 périodes de 0.5 - 0.25s chacune, ce qui se rapproche relativement bien des données implémentées par défaut dans le programme utilisé. Néanmoins, comme nous avons fait des tests avec un tube non-réflexif, ces paramètres ne resteront pas nécessairement adéquats pour traiter un autre type de condition limite, notamment des conditions impliquant des réflexions pour lesquelles on souhaiterait avoir une plus grande plage de données pour analyser l'évolution. 
+
+
 # Cas linéaire :  <a id="Lin"></a>
 
-Pour tous nos affichages précédents, il est clair que nos résulats restent peu lisibles, en partie à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
+Pour tous nos affichages précédents, il est clair que nos résulats restent peu fiables, principalement à cause des non-linéarités présentes de base dans le modèle utilisé lors de l'élaboration de ce tube 1D. 
 Il sera donc présenté ici une amélioration de cette modélisation, ne présentant plus qu'une évolution linéaire.
 
 
