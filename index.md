@@ -19,7 +19,7 @@ L'objectif de cette première partie sera d'étudier sur un cas simple (un seul 
 les effets de differents paramètres (conditions aux limites, loi de tube, rhéologie du fluide, effets instationnaires
 sur la contrainte pariétale, etc...) sur l'écoulement (la propagation des ondes, stroke volume, etc...).
 
-[Résultats première partie](TP.md)
+Résultats première partie
 
 Avec les projets, vous pourrez enfin mettre vous même tout ça en musique sur
 des exemples concrets (circulation cérébrale, écoulement en présence d'une sténose, 
