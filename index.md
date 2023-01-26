@@ -1,8 +1,12 @@
 # Welcome to Physique du vivant
 
-Cette page du cours d'option _Physique du Vivant_ du Master de Mécanique-Énergétique de l'UPS
-est dédiée à la partie **apprentissage par projet** de ce cours.
+Cette page des cours d'option _Physique du Vivant_ de la Licence et du Master de Mécanique-Énergétique de l'UPS
+est dédiée à la partie **apprentissage par projet** de ces cours.
 
+## Option LICENCE
+Vous trouverez ici les documents concernant les mini-projets de licence.
+
+## Option MASTER
 Le cours se focalisera principalement sur la circulation sanguine.
 Il établira en particulier les différents modèles mathématiques d'écoulement de
 fluide dans des conduites souples.
