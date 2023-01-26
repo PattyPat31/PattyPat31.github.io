@@ -4,7 +4,7 @@ Cette page des cours d'option _Physique du Vivant_ de la Licence et du Master de
 est dédiée à la partie **apprentissage par projet** de ces cours.
 
 ## Option LICENCE
-Vous trouverez ici les documents concernant les mini-projets de licence.
+Vous trouverez ici les documents produits par les étudiants concernant les mini-projets de licence.
 
 ## Option MASTER
 Le cours se focalisera principalement sur la circulation sanguine.
@@ -34,7 +34,7 @@ scientifiques dont vous chercherez:
 - à modifier le cas étudié (ajout d'un sténose, prise en compte d'une autre partie du réseau vasculaire, etc...)
 - etc...
 
-## _Présentation des projets 2021-2022_
+### _Présentation des projets 2021-2022_
 
 1. [Propagation des ondes dans l'aorte](projet_aorte.md)
 2. [Ecoulement dans le réseau artériel systémique](projet_reseau_arteriel.md)
