@@ -5,6 +5,7 @@ est dédiée à la partie **apprentissage par projet** de ces cours.
 
 ## Option LICENCE
 Vous trouverez ici les documents produits par les étudiants concernant les mini-projets de licence.
+[Physique de la pression sanguine](PPS.pdf)
 
 ## Option MASTER
 Le cours se focalisera principalement sur la circulation sanguine.
