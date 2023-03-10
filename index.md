@@ -10,6 +10,8 @@ Vous trouverez ici les documents produits par les étudiants concernant les mini
 
 [Trachée des insectes](RapportDef_CC1_BIOMECA_2023_SBAI_LABRID.pdf)
 
+[Vitesse limite de marche](Vitesse_limite_de_marche_Laborie_Schoepff.pdf)
+
 ## Option MASTER
 Le cours se focalisera principalement sur la circulation sanguine.
 Il établira en particulier les différents modèles mathématiques d'écoulement de
