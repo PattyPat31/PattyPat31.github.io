@@ -8,7 +8,7 @@ Vous trouverez ici les documents produits par les étudiants concernant les mini
 
 [Physique de la pression sanguine](PPS.pdf)
 
-[Trachée des insectes](rapport_CC1_BIOMECA_2023_SBAILABRID.pdf)
+[Trachée des insectes](RapportDef_CC1_BIOMECA_2023_SBAI_LABRID.pdf)
 
 ## Option MASTER
 Le cours se focalisera principalement sur la circulation sanguine.
