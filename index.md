@@ -16,7 +16,7 @@ Vous trouverez ici les documents produits par les étudiants concernant les mini
 
 [Transport de charges chez la fourmi](Tronsport_chez_les_fourmis_Ortiz.pdf)
 
-[Embryons d'oiseaux](embryons_oiseaux_FOURNIER_BERNET.pdf)
+[Respiration des embryons d'oiseaux](embryons_oiseaux_FOURNIER_BERNET.pdf)
 
 ## Option MASTER
 Le cours se focalisera principalement sur la circulation sanguine.
