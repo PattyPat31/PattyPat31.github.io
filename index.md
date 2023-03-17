@@ -18,7 +18,7 @@ Vous trouverez ici les documents produits par les étudiants concernant les mini
 
 [Respiration des embryons d'oiseaux](embryons_oiseaux_FOURNIER_BERNET.pdf)
 
-[Adhésion visqueuse](rapport_bioméca_duhem_pages.pdf)
+[Adhésion visqueuse](rapport_biomeca_duhem_pages.pdf)
 
 ## Option MASTER
 Le cours se focalisera principalement sur la circulation sanguine.
