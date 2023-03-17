@@ -14,6 +14,8 @@ Vous trouverez ici les documents produits par les étudiants concernant les mini
 
 [Transport de l'eau dans les arbres](CC1_arbres.pdf)
 
+[Transport de charges chez la fourmi](Tronsport_chez_les_fourmis_Ortiz.pdf)
+
 ## Option MASTER
 Le cours se focalisera principalement sur la circulation sanguine.
 Il établira en particulier les différents modèles mathématiques d'écoulement de
