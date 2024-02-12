@@ -1,7 +1,7 @@
 # Welcome to Physique du vivant
 
 Cette page des cours d'option _Physique du Vivant_ de la Licence et du Master de Mécanique-Énergétique de l'UPS
-est dédiée à la partie **apprentissage par projet** de ces cours.
+est dédiée à la partie **apprentissage par projet** de ces 2 cours.
 
 ## Option LICENCE
 Vous trouverez ici les documents produits par les étudiants concernant les mini-projets de licence.
